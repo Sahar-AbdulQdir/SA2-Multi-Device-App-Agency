@@ -1,0 +1,129 @@
+
+        /* Header styles */
+        #header {
+            background-color: #000;
+            color: white;
+            padding: 10px 40px;
+            border-radius: 25px;
+        }
+
+        .navPart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+            left: -60px;
+            top: -5px;
+            overflow: visible;
+        }
+
+        .logo img {
+            height: 120px;
+            margin-right: 10px;
+        }
+
+        .logo h3 {
+          width: 250px;
+            position: relative;
+            left: -40px;
+            font-size: 2em;
+        }
+
+        .navList ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+
+        .navList li {
+            font-size: 1.7em;
+            position: relative;
+        }
+
+        .navList a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .navList a:hover {
+            color: #a315b9;
+        }
+
+        .button {
+            width: 150px;
+            padding: 10px 30px;
+            position: relative;
+            display: block;
+            text-decoration: none;
+            overflow: hidden;
+            border: 0;
+            cursor: pointer;
+            border-radius: 2rem;
+            box-shadow: 0 0 5px 0px #b45da8;
+            position: relative;
+            top: 5px;
+        }
+
+        .button:hover .wave {
+            top: -120px;
+        }
+
+        .text {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        .wave {
+            width: 200px;
+            height: 200px;
+            background-color: #9a448f;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 0;
+            top: -70px;
+            transition: 0.4s;
+        }
+
+        .wave::before, a .wave::after {
+            width: 200%;
+            height: 200%;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -75%);
+        }
+
+        .wave::before {
+            border-radius: 45%;
+            background-color: #832f78;
+            animation: wave 5s linear infinite;
+        }
+
+        .wave::after {
+            border-radius: 40%;
+            background-color: #b45da8;
+            animation: wave 10s linear infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translate(-50%, -75%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -75%) rotate(300deg);
+            }
+        }

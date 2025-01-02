@@ -1,0 +1,69 @@
+/* Set the default cursor to be the custom one */
+body {
+    cursor: none; /* Hide the default cursor */
+  }
+
+
+  /* Create the custom rotating cursor */
+  .custom-cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #e98bd7c7; /* Pinkish border */
+    border-radius: 50%; /* Makes it a perfect circle */
+    pointer-events: none; /* Ensures it doesn't interfere with other elements */
+    transition: transform 0.2s ease, border 0.2s ease; /* Smooth movement and effects */
+    animation: rotate 2s linear infinite, pulse 2s infinite; /* Add rotation and pulsing animations */
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Glowing effect */
+  }
+  
+  /* Animation for rotation */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+      transform: rotate(360deg); /* Complete a full rotation */
+    }
+  }
+  
+  /* Animation for pulsing effect */
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Normal size */
+    }
+    50% {
+      transform: scale(1.2); /* Slightly bigger */
+    }
+    100% {
+      transform: scale(1); /* Back to normal */
+    }
+  }
+  
+  
+  /* Animation for the pulsating effect */
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Normal size */
+    }
+    50% {
+      transform: scale(1.2); /* Slightly bigger */
+    }
+    100% {
+      transform: scale(1); /* Back to normal */
+    }
+  }
+  
+  /* Animation for the glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
+    }
+    50% {
+      box-shadow: 0 0 20px pink, 0 0 40px pink, 0 0 60px pink;
+    }
+    100% {
+      box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
+    }
+  }
+  

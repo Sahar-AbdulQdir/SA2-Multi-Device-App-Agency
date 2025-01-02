@@ -1,0 +1,138 @@
+.Pricing-carousel-container {
+    /* height: 28em; */
+    /* margin: 0 auto; */
+    /* position: relative; */
+    /* width: 30em; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+        }
+
+        .Pricing-carousel-container h1{
+            font-size: 5em;
+            color: white;
+        }
+        .Pricing-carousel-container h1 span{
+            color: #a315b9;
+        }
+
+        .Pricing-carousel-container .PricingImg img{
+            width: 550px;
+            margin-top: -80px;
+             height: auto;
+            /* object-fit: cover;  */
+        }
+
+        .Pricing-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .Pricing-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 14rem;
+            padding: 1rem;
+            background-color: rgb(122, 48, 143);
+            background-image: radial-gradient(
+                    circle at 0% 0%,
+                    rgb(37, 7, 44) 15%,
+                    rgba(0, 0, 0, 0) 75%
+                ),
+                radial-gradient(
+                    circle at 100% 100%,
+                    rgb(25, 2, 31, 0.9) 15%,
+                    rgba(0, 0, 0, 0) 150%
+                ),
+                linear-gradient(
+                    135deg,
+                    rgba(24, 8, 28, 0) 0%,
+                    rgb(122, 48, 143) 50%,
+                    rgba(24, 8, 28, 0) 100%
+                );
+            border-radius: 0.5rem;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0.6;
+        }
+
+        .Pricing-card.Pricing-active {
+            transform: scale(1.1);
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .Pricing-card .Pricing-title {
+            font-size: 1.25rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .Pricing-card .pricing {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .Pricing-card .pricing-time,
+        .Pricing-card .sub-title {
+            font-size: 0.75rem;
+            color: rgb(184, 132, 199);
+            font-weight: 500;
+        }
+
+        .Pricing-card .Pricing-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+            font-size: 0.875rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .Pricing-card .Pricing-button {
+            cursor: pointer;
+            padding: 0.5rem 0.75rem;
+            background-color: rgb(199, 95, 228);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .Pricing-card .Pricing-button:hover {
+            box-shadow: 0px 0px 20px 0 rgb(199, 95, 228);
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .control-button {
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
+            background: none;
+            border: none;
+        }
+
+        .control-button:hover {
+            color: rgb(199, 95, 228);
+        }

@@ -1,0 +1,86 @@
+
+
+#Reviews{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+     margin-top: 200px; 
+}
+
+#Reviews h1{
+    font-size: 4.7em;
+    color: white;
+}
+
+#Reviews span{
+    color: #820ea2;
+}
+.ReviewsCards{
+    width: 100%;
+/* height: 200vh; */
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 5%;
+}
+
+
+.review-card{
+position: relative;
+font-family: sans-serif;
+width: 220px;
+height: 220px;
+background: #000000;
+padding: 30px;
+border-radius: 50%;
+box-shadow: 0 0 22px rgba(180, 2, 147, 0.4);
+transition: .6s;
+margin: 0 25px;
+}
+.review-card:hover{
+border-radius: 10px;
+height: 260px;
+}
+.review-card .img{
+position: relative;
+width: 100%;
+height: 100%;
+transition: .6s;
+z-index: 99;
+}
+.review-card:hover .img{
+transform: translateY(-40px);
+}
+.img img{
+width: 100%;
+border-radius: 50%;
+box-shadow: 0 0 22px #3336;
+transition: .6s;
+}
+.review-card:hover img{
+border-radius: 10px;
+}
+.caption{
+text-align: center;
+transform: translateY(-80px);
+opacity: 0;
+transition: .6s;
+}
+.review-card:hover .caption{
+opacity: 1;
+}
+.caption h3{
+font-size: 21px;
+font-family: sans-serif;
+}
+.caption p{
+font-size: 15px;
+color: #ffffff;
+font-family: sans-serif;
+margin: -10px 0 9px 0;
+}
+
+
