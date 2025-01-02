@@ -4,894 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreativePulse</title>
-    
-    <style>
-        /* General styles */
-        body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(98,36,94,1) 9%, rgba(120,19,125,1) 27%, rgba(245,245,245,1) 49%, rgba(202,136,217,1) 67%, rgba(192,72,221,1) 81%, rgba(0,0,0,1) 100%); /* Diagonal gradient */
-    color: white;
-}
+    <link rel="stylesheet" href="in3.css">
 
-
-
-
-.main {
-    position: relative;
-    margin: 20px auto; /* Centers the container */
-    max-width: 1400px; /* Restricts the width */
-    border-radius: 20px; /* Rounded corners */
-    border: 2px solid rgba(233 179 214); /* Vibrant border color */
-    box-shadow: 0 0 5px rgba(208, 31, 217, 0.7), 0 0 3px rgba(208, 31, 217, 0.5); /* Glowy shadow effect */
-    background: rgb(0, 0, 0); /* Semi-transparent background */
-    backdrop-filter: blur(5px); /* Blur effect */
-    overflow: hidden; /* Ensures content stays inside */
-}
-
-
-        /* Header styles */
-        #header {
-            background-color: #000;
-            color: white;
-            padding: 10px 40px;
-        }
-
-        .navPart {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            position: relative;
-            left: -70px;
-            top: -5px;
-        }
-
-        .logo img {
-            height: 90px;
-            margin-right: 10px;
-        }
-
-        .logo h3 {
-            font-size: 2em;
-            margin: 0;
-            position: relative;
-            left: -40px;
-        }
-
-        .navList ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 20px;
-        }
-
-        .navList li {
-            font-size: 1em;
-            position: relative;
-            top: 15px;
-        }
-
-        .navList a {
-            text-decoration: none;
-            color: white;
-            transition: color 0.3s;
-        }
-
-        .navList a:hover {
-            color: #a315b9;
-        }
-
-        .button {
-            width: 150px;
-            padding: 10px 30px;
-            position: relative;
-            display: block;
-            text-decoration: none;
-            overflow: hidden;
-            border: 0;
-            cursor: pointer;
-            border-radius: 2rem;
-            box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.5);
-            position: relative;
-            top: -10px;
-        }
-
-        .button:hover .wave {
-            top: -120px;
-        }
-
-        .text {
-            position: relative;
-            z-index: 1;
-            color: white;
-            font-size: 15px;
-            letter-spacing: 3px;
-            font-weight: 600;
-        }
-
-        .wave {
-            width: 200px;
-            height: 200px;
-            background-color: #c62be6;
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-            position: absolute;
-            left: 0;
-            top: -70px;
-            transition: 0.4s;
-        }
-
-        .wave::before, a .wave::after {
-            width: 200%;
-            height: 200%;
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -75%);
-        }
-
-        .wave::before {
-            border-radius: 45%;
-            background-color: #820ea2;
-            animation: wave 5s linear infinite;
-        }
-
-        .wave::after {
-            border-radius: 40%;
-            background-color: rgba(81, 19, 110, 0.5);
-            animation: wave 10s linear infinite;
-        }
-
-        @keyframes wave {
-            0% {
-                transform: translate(-50%, -75%) rotate(0deg);
-            }
-
-            100% {
-                transform: translate(-50%, -75%) rotate(300deg);
-            }
-        }
-
-        /* Intro section styles */
-        .Intro {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            /* margin-top: 150px; */
-
-            height: 80vh; /* Set the height of the intro section */
-        
-        }
-
-        .Intro video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Make the video cover the entire section without distortion */
-            z-index: -1; /* Place the video behind the text */
-        }
-
-
-        .Intro .partOne {
-            margin-top: -20px;
-        }
-        .Intro .partOne h1 {
-            font-size: 2.5em;
-            margin: 20px 0;
-        }
-
-        .Intro .partOne p {
-            font-size: 1.2em;
-            margin-bottom: 50px;
-            max-width: 600px;
-        }
-
-        .Intro .partTwo {
-            display: flex;
-            gap: 85px;
-        }
-
-        .Intro button {
-            background: linear-gradient(45deg, #d861f0, #510566);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: transform 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .Intro button:hover {
-            transform: scale(1.1);
-        }
-
-        #AboutUs {
-            display: flex;
-            flex-direction: row;
-            margin-top: 40px;
-            justify-content: space-between;
-        }
-
-        #AboutUs .Abouttxt {
-            margin-left: 70px;
-            color: white;
-            font-size: 1.3em;
-        }
-
-        #AboutUs .Abouttxt h1{
-            text-decoration-style: double;  
-            font-size: 2em;    
-          }
-
-          #AboutUs .Abouttxt p{
-            width:500px;
-    font-size: 1.1em;
-    text-align: left;
-    line-height: 1.5;
-          }
-
-          #AboutUs .Spline{
-            margin-top: 50px;
-            width: 900px;
-
-          }
-
-
-
-          #Services{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            margin-top: 100px;
-          }
-
-          #Services h1{
-            font-size: 5em;
-            color: white;
-          }
-
-          #Services h1 span{
-            color: #a315b9;
-          }
-          .ServicesCards {
-          display: flex;
-          gap: 60px;
-          flex-wrap: wrap;
-          justify-content: center;
-          margin: 20px;
-        }
-      
-/* From Uiverse.io by Pravins01 */ 
-.card {
-  position: relative;
-  width: 190px;
-  height: 254px;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  padding: 12px;
-  gap: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: white;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  left: -5px;
-  margin: auto;
-  width: 225px;
-  height: 285px;
-  border-radius: 10px;
-  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
-  z-index: -10;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
-  transform: translate3d(0, 0, 0) scale(0.95);
-  filter: blur(20px);
-}
-
-.heading {
-  font-size: 20px;
-  text-transform: capitalize;
-  font-weight: 700;
-}
-
-.card p:not(.heading) {
-  font-size: 14px;
-}
-
-.card p:last-child {
-  color: #e81cff;
-  font-weight: 600;
-}
-
-.card:hover::after {
-  filter: blur(30px);
-}
-
-.card:hover::before {
-  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
-}
-
-#Carousel{
-    margin-top: 30px;
-}
-
-.TxtWrapper {
-    display: flex;
-    justify-content: flex-start;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-    border-radius: 25px; /* Rounded corners */
-    border: 1px solid rgba(0, 0, 0, 0.3); /* Subtle border for definition */
-    overflow: hidden;
-    transform: rotate(187deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Black blur shadow */
-    backdrop-filter: blur(10px); /* Creates a frosted glass effect */
-}
-
-
-/* transform: rotate(177deg) translate(13px, 0px) scale(1, 0.6) skew(88deg, -24deg); */
-.TxtWrapper h1 {
-font-size: 48px;
-text-transform: uppercase;
-color: white;
-
-white-space: nowrap;
-padding: 0 6rem;
-letter-spacing: 1px;
-animation: move-rtl 6000ms linear infinite;
-transform: rotate(180deg);
-}
-
-@keyframes move-rtl{
-    0% { 
-        transform: translateX(0); 
-    }
-    100% { 
-        transform: translateX(-100%); 
-    }
-}
-
-#Projects{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    margin-top: 100px;
-}
-
-#Projects h1{
-    font-size: 5em;
-    color: white;
-}
-
-#Projects h1 span{
-    color: #a315b9;
-}
-
-.grid-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: 200px;
-    grid-gap: 10px;
-    padding: 20px;
-    position: relative; 
-    width: 900px;
-}
-
-.grid-images img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Add random sizes for unorganized effect */
-    grid-column: span 1; /* Default span */
-    grid-row: span 1;
-
-}
-
-
-/* Apply different spans for randomness */
-.grid-images img:nth-child(2n) {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.grid-images img:nth-child(3n) {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-
-.grid-images img:nth-child(5n) {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.grid-images img:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 10px 20px rgba(217, 217, 217, 0.3);
-}
-
-
-.Pricing-carousel-container {
-    /* height: 28em; */
-    /* margin: 0 auto; */
-    /* position: relative; */
-    /* width: 30em; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-        }
-
-        .Pricing-carousel-container h1{
-            font-size: 5em;
-            color: white;
-        }
-        .Pricing-carousel-container h1 span{
-            color: #a315b9;
-        }
-
-        .Pricing-carousel-container .PricingImg img{
-            width: 600px;
-             height: auto;
-            /* object-fit: cover;  */
-        }
-
-        .Pricing-carousel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            position: relative;
-            width: 100%;
-        }
-
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .Pricing-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            width: 14rem;
-            padding: 1rem;
-            background-color: rgb(122, 48, 143);
-            background-image: radial-gradient(
-                    circle at 0% 0%,
-                    rgb(37, 7, 44) 15%,
-                    rgba(0, 0, 0, 0) 75%
-                ),
-                radial-gradient(
-                    circle at 100% 100%,
-                    rgb(25, 2, 31, 0.9) 15%,
-                    rgba(0, 0, 0, 0) 150%
-                ),
-                linear-gradient(
-                    135deg,
-                    rgba(24, 8, 28, 0) 0%,
-                    rgb(122, 48, 143) 50%,
-                    rgba(24, 8, 28, 0) 100%
-                );
-            border-radius: 0.5rem;
-            transition: transform 0.5s ease, opacity 0.5s ease;
-            opacity: 0.6;
-        }
-
-        .Pricing-card.Pricing-active {
-            transform: scale(1.1);
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .Pricing-card .Pricing-title {
-            font-size: 1.25rem;
-            color: white;
-            font-weight: 600;
-        }
-
-        .Pricing-card .pricing {
-            font-size: 1.5rem;
-            color: white;
-            font-weight: 600;
-        }
-
-        .Pricing-card .pricing-time,
-        .Pricing-card .sub-title {
-            font-size: 0.75rem;
-            color: rgb(184, 132, 199);
-            font-weight: 500;
-        }
-
-        .Pricing-card .Pricing-list {
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0;
-            font-size: 0.875rem;
-            color: white;
-            font-weight: 500;
-        }
-
-        .Pricing-card .Pricing-button {
-            cursor: pointer;
-            padding: 0.5rem 0.75rem;
-            background-color: rgb(199, 95, 228);
-            color: white;
-            border: none;
-            border-radius: 0.5rem;
-            transition: box-shadow 0.3s ease-in-out;
-        }
-
-        .Pricing-card .Pricing-button:hover {
-            box-shadow: 0px 0px 20px 0 rgb(199, 95, 228);
-        }
-
-        .controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .control-button {
-            cursor: pointer;
-            font-size: 2rem;
-            color: white;
-            background: none;
-            border: none;
-        }
-
-        .control-button:hover {
-            color: rgb(199, 95, 228);
-        }
-
-#Contact {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    /* text-align: center; */
-    /* gap: 40px; */
-    margin-top: 80px;
-}
-
-#Contact .ContactTxt{
-    color: white;
-    margin-bottom: 15px;
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-}
-#Contact h1 {
-    font-size: 3em; /* Reduced font size for better responsiveness */
-    color: white;
-    margin-bottom: 15px;
-    margin-left: 60px;
-}
-
-#Contact h1 span {
-    color: #a315b9;
-}
-
-#Contact p {
-    width: 300px;
-    font-size: 1.1em;
-    color: white;
-    margin-bottom: 30px;
-    margin-left: 60px;
-    line-height: 1.6;
-}
-.form-container {
-  width: 600px;
-  background: linear-gradient(#000000, #000000) padding-box,
-              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px 24px;
-  font-size: 14px;
-  font-family: inherit;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-sizing: border-box;
-  border-radius: 16px;
-  margin-right: 100px;
-}
-
-.form-container button:active {
-  scale: 0.95;
-}
-
-.form-container .form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-container .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.form-container .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 12px;
-}
-
-.form-container .form-group input {
-  width: 95%;
-  padding: 12px 16px;
-  border-radius: 8px;
-  color: #fff;
-  font-family: inherit;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-}
-
-.form-container .form-group textarea {
-  width: 95%;
-  padding: 12px 16px;
-  border-radius: 8px;
-  resize: none;
-  color: #fff;
-  height: 96px;
-  border: 1px solid #ffffff;
-  background-color: transparent;
-  font-family: inherit;
-}
-
-.form-container .form-group input::placeholder {
-  opacity: 0.5;
-}
-
-.form-container .form-group input:focus {
-  outline: none;
-  border-color: #e81cff;
-}
-
-.form-container .form-group textarea:focus {
-  outline: none;
-  border-color: #e81cff;
-}
-
-.form-container .form-submit-btn {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  align-self: flex-start;
-  font-family: inherit;
-  color: #717171;
-  font-weight: 600;
-  width: 40%;
-  background: #313131;
-  border: 1px solid #414141;
-  padding: 12px 16px;
-  font-size: inherit;
-  gap: 8px;
-  margin-top: 8px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.form-container .form-submit-btn:hover {
-  background-color: #fff;
-  border-color: #fff;
-}
-
-
-
-.footer {
-    background-color: #000000;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 150px;
-    border-top: 2px solid transparent;
-    background-image: linear-gradient(145deg, #fc76ef, #40c9ff);
-    background-clip: padding-box;
-    -webkit-background-clip: text;
-    box-shadow: 0 0 15px #ec68de, 0 0 30px #6dc2f7;
-    border-bottom: solid 1px black;
-}
-
-        .footerContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .footerColumn {
-            flex: 1;
-            min-width: 200px;
-            margin: 10px;
-        }
-
-        .footerColumn h3 {
-            color: #9b59b6;
-            margin-bottom: 15px;
-        }
-
-        .footerColumn a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            margin-bottom: 10px;
-            transition: color 0.3s;
-        }
-
-        .footerColumn a:hover {
-            color: #9b59b6;
-        }
-
-        .footerLogo img {
-            max-width: 500px;
-            margin-top: -120px;
-            margin-left: -120px;
-        }
-
-        .footerLogo p {
-            margin-top: -80px;
-            margin-left: -15px;
-            font-size: 14px;
-        }
-
-        .socialIcons{
-            display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(2, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-        }
-        .socialIcons a {
-            /* margin-right: 50px; */
-            color: #fff;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        .socialIcons a:hover {
-            color: #9b59b6;
-        }
-
-        .footerAddress {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footerAddress div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .footerAddress div i {
-            margin-right: 10px;
-            color: #9b59b6;
-        }
-
-        .footerCopyright {
-            margin-top: 20px;
-            border-top: 1px solid #000000;
-            padding-top: 20px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .footerContainer {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footerColumn {
-                text-align: center;
-            }
-
-            .footerAddress div {
-                justify-content: center;
-            }
-        }
-
-        .ocean {
-            position: relative;
-            height: 150px;
-            width: 100%;
-            overflow: hidden;
-            background: #000000;
-        }
-
-        .wave2 {
-            position: absolute;
-            bottom: 0;
-            width: 200%;
-            height: 150px;
-            background-repeat: repeat-x;
-            background-size: contain;
-            background-image: url(./Resources/Wave\ \(2\).png);
-        }
-
-        .wave2:nth-child(1) {
-            animation: waveMove 6s linear infinite;
-            opacity: 0.6;
-            z-index: 3;
-        }
-
-        .wave2:nth-child(2) {
-            animation: waveMove 9s linear infinite;
-            opacity: 0.4;
-            z-index: 2;
-        }
-
-        .wave2:nth-child(3) {
-            animation: waveMove 12s linear infinite;
-            opacity: 0.2;
-            z-index: 1;
-        }
-
-        @keyframes waveMove {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-    </style>
 </head>
 <body>
+    
+  <div class="loader">
+    <div class="loader-clip loader-clip-top">
+        <div class="marquee">
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+        </div>
+    </div>
+
+    <div class="loader-clip loader-clip-center">
+        <div class="marquee">
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+        </div>
+    </div>
+
+    <div class="loader-clip loader-clip-bottom">
+        <div class="marquee">
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+            <span>CreativePulse<span class="copymark">&#174;</span></span>
+        </div>
+    </div>
+</div>
     <section class="main">
-    <section id="header">
+    <section id="header" class="fade-in">
         <div class="navPart">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="./Resources/Logo.png" alt="CreativePulse Logo">
-                </a>
-                <h3>CreativePulse</h3>
-            </div>
+          <div class="logo">
+            <a href="index.html">
+                <img src="./Resources/Logo.png" alt="CreativePulse Logo">
+            </a>
+            <h3>
+                <svg style="max-width: 600px; height: auto; display: block;" viewBox="0 0 100 20">
+                    <defs>
+                        <!-- Define a gradient for the wave -->
+                        <linearGradient id="gradient">
+                            <stop offset="0%" stop-color="#ffffff" />
+                            <stop offset="100%" stop-color="#ffffff" />
+                        </linearGradient>
+                        <pattern id="wave" x="0" y="-0.5" width="100%" height="100%" patternUnits="userSpaceOnUse">
+                            <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" fill="url(#gradient)">
+                                <animateTransform
+                                    attributeName="transform"
+                                    begin="0s"
+                                    dur="1.5s"
+                                    type="translate"
+                                    from="0,0"
+                                    to="40,0"
+                                    repeatCount="indefinite" />
+                            </path>
+                        </pattern>
+                    </defs>
+                    <!-- Add animated text with wave effect -->
+                    <text text-anchor="middle" x="50" y="15" font-size="15" fill="white" fill-opacity="0.1">CreativePulse</text>
+                    <text text-anchor="middle" x="50" y="15" font-size="15" fill="url(#wave)" fill-opacity="1">CreativePulse</text>
+                </svg>
+            </h3>
+        </div>
+        
 
             <div class="navList">
                 <ul>
@@ -909,26 +86,29 @@ grid-row-gap: 0px;
     </section>
 
     <section class="Intro">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
         <video autoplay muted loop>
             <source src="./Resources/HeaderBg.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="partOne">
-            <button>Welcome to CreativePulse</button>
+            <button class="WhiteGlowEffect">Welcome to CreativePulse</button>
             <h1>Your path to digital excellence</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nam, deserunt distinctio voluptate aliquam magni ipsam, velit eius fuga et atque, doloribus aliquid totam blanditiis! Amet magnam cum autem recusandae.</p>
         </div>
 
         <div class="partTwo">
-            <button>Learn More</button>
-            <button>About Us</button>
+            <button class="WhiteGlowEffect">Learn More</button>
+            <button class="WhiteGlowEffect">About Us</button>
         </div>
     </section>
 
-    <section id="AboutUs">
+    <section id="AboutUs" class="fade-in">
         <div class="Abouttxt">
-            <h1>About Us</h1>
-            <p>At [Agency Name], we combine creativity and technology to transform brands. Our team of designers, developers, and strategists crafts innovative digital solutions tailored to your goals. Specializing in web development, digital marketing, branding, and content creation, we deliver personalized experiences for startups and established companies alike. Our simple approach: we listen, we create, and we deliver. Let us help elevate your digital presence and drive your business forward</p>
+            <h1 class="WhiteGlowEffect">About Us</h1>
+            <p id="typewriter"></p>
         </div>
         
         <div class="Spline">
@@ -937,7 +117,7 @@ grid-row-gap: 0px;
     </div>
     </section>
 
-      <section id="Carousel">
+      <section id="Carousel" class="fade-in">
         <div class="TxtWrapper">
             <h1>✦ Web Development</h1>
             <h1>✦ Digital Marketing</h1>
@@ -951,8 +131,8 @@ grid-row-gap: 0px;
         </div>
       </section>
 
-    <section id="Services">
-        <h1>What We <span>Do</span>?</h1>
+    <section id="Services" class="fade-in">
+        <h1 class="WhiteGlowEffect">What We <span>Do</span>?</h1>
 
         <div class="ServicesCards">
         <div class="card">
@@ -976,24 +156,142 @@ grid-row-gap: 0px;
 
 
 
-      <section id="Projects">
-        <h1>Our <span>W</span>orks</h1>
-        <div class="grid-images">
-            <img src="./Resources/Project1.jpeg" alt="">
-            <img src="./Resources/Project2.jpeg" alt="">
-            <img src="./Resources/Project3.jpeg" alt="">
-            <img src="./Resources/Project4.jpeg" alt="">
-            <img src="./Resources/Project5.jpg" alt="">
-            <img src="./Resources/Project6.jpg" alt="">
-            <img src="./Resources/Project2.jpeg" alt="">
-            <img src="./Resources/Project3.jpeg" alt="">
-            <img src="./Resources/Project4.jpeg" alt="">
+      <section id="Projects" class="fade-in">
+        <h1 class="WhiteGlowEffect">Our <span>W</span>orks</h1>
+        <div class="preview-img">
+            <img src="./Resources/img13.png" alt="" />
+        </div>
+    
+        <div class="container">
+            <div class="gallery"></div>
         </div>
       </section>
+        <div class="TxtWrapper2">
+        <h1>✦ Meet the team</h1>
+        <h1>✦ Meet the team</h1>
+        <h1>✦ Meet the team</h1>
+        <h1>✦ Meet the team</h1>
+        <h1>✦ Meet the team</h1>
+        <h1>✦ Meet the team</h1>
+        <h1>✦ Meet the team</h1>
+    </div>
+      <section id="team-section" class="fade-in">
 
-      <section class="Pricing-carousel-container">
+        <div class="team-item">
+            <a href="#" class="team-link" data-desc="Team member 1 description.">
+                <h3>1</h3>
+                <div class="TeamCard">
+                    <img src="./Resources/team3.jpeg" alt="Team Member 1" />
+                    <div class="description">Team member 1 description.</div>
+                </div>
+            </a>
+        </div>
+        <div class="team-item">
+            <a href="#" class="team-link" data-desc="Team member 2 description.">
+                <h3>2</h3>
+                <div class="TeamCard">
+                    <img src="./Resources/team1.jpeg" alt="Team Member 2" />
+                    <div class="description">Team member 2 description.</div>
+                </div>
+            </a>
+        </div>
+        <div class="team-item">
+            <a href="#" class="team-link" data-desc="Team member 3 description.">
+                <h3>3</h3>
+                <div class="TeamCard">
+                    <img src="./Resources/team2.jpeg" alt="Team Member 3" />
+                    <div class="description">Team member 3 description.</div>
+                </div>
+            </a>
+        </div>
 
-        <h1><span>S</span>tart Your <span>P</span>lan Now<span>!</span></h1>
+        <div class="team-item">
+            <a href="#" class="team-link" data-desc="Team member 3 description.">
+                <h3>4</h3>
+                <div class="TeamCard">
+                    <img src="./Resources/team2.jpeg" alt="Team Member 3" />
+                    <div class="description">Team member 3 description.</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+      <section id="Reviews" class="fade-in">
+
+        <div class="ReviewsTxt">
+            <h1 class="WhiteGlowEffect"><span>O</span>ur Ha<span>p</span>py <span>C</span>ustom<span>e</span>rs</h1>
+        </div>
+
+        <div class="ReviewsCards">
+            <div class="review-card">
+                <div class="img">
+                    <img src="./Resources/person1.jpeg">
+                </div>
+                <div class="caption">
+                    <h3>Excellent Service!</h3>
+                    <p>"The experience was fantastic! Highly recommend."</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="img">
+                    <img src="./Resources/person2.jpeg">
+                </div>
+                <div class="caption">
+                    <h3>Very Satisfied</h3>
+                    <p>"The team was very professional, and the project was completed on time."</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="img">
+                    <img src="./Resources/person3.jpeg">
+                </div>
+                <div class="caption">
+                    <h3>Highly Recommend!</h3>
+                    <p>"Amazing quality, fast and easy process!"</p>
+                </div>
+            </div>
+        </div>
+      </section>
+<section id="FAQ" class="fade-in">
+ <h1 class="WhiteGlowEffect">Frequently Asked Questions</h1>
+      <div class="faq-container">
+       
+    
+        <div class="faq-item">
+            <button class="faq-question">
+                What is your return policy?
+                <span class="arrow"></span>
+            </button>
+            <div class="faq-answer">
+                <p>You can return any item within 30 days of purchase for a full refund.</p>
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <button class="faq-question">
+                Do you offer international shipping?
+                <span class="arrow"></span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, we ship to most countries worldwide. Shipping fees apply.</p>
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <button class="faq-question">
+                How can I track my order?
+                <span class="arrow"></span>
+            </button>
+            <div class="faq-answer">
+                <p>Once your order is shipped, we will send you a tracking number via email.</p>
+            </div>
+        </div>
+    </div>
+</section> 
+
+      <section class="Pricing-carousel-container fade-in">
+
+        <h1 class="WhiteGlowEffect"><span>S</span>tart Your <span>P</span>lan Now<span>!</span></h1>
         <div class="PricingImg">
             <img class="PriceImage" src="./Resources/PricingImg.png" alt="">
         </div>
@@ -1050,11 +348,59 @@ grid-row-gap: 0px;
     </section>
 
 
-      <section id="Contact">
-        <div class="ContactTxt">
-        <h1>Co<span>n</span>tact <span>U</span>s</h1>
-        <p>Please don't hesitate to reach out to us for any inquiries, ideas, or collaboration opportunities. We'd be more than happy to help.</p>
+      <section id="Contact" class="fade-in">
+        <div class="ContactTxtWrap WhiteGlowEffect">
+            <div class="line">
+              <div class="left">
+                <div class="content">
+                  <span class="spanSlow">Get</span>
+                </div>
+              </div><!--
+              --><div class="right">
+                <div class="content">
+                  <span class="spanSlow">Get</span>
+                </div>
+              </div>
+            </div>
+            <div class="line">
+              <div class="left">
+                <div class="content">
+                  <span class="spanSlow">In</span>
+                </div>
+              </div><!--
+              --><div class="right">
+                <div class="content">
+                  <span class="spanSlow">In</span>
+                </div>
+              </div>
+              </div>
+              <div class="line">
+                  <div class="left">
+                    <div class="content">
+                      <span class="spanFast">Touch</span>
+                    </div>
+                  </div><!--
+                  --><div class="right">
+                    <div class="content">
+                      <span class="spanFast">Touch</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="line">
+                    <div class="left">
+                      <div class="content">
+                        <span class="spanSlow">Today</span>
+                      </div>
+                    </div><!--
+                    --><div class="right">
+                      <div class="content">
+                        <span class="spanSlow">Today</span>
+                      </div>
+                    </div>
+                  </div>
         </div>
+        
+
         <div class="form-container">
             <form class="form">
               <div class="form-group">
@@ -1072,12 +418,12 @@ grid-row-gap: 0px;
     <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.48/build/spline-viewer.js"></script> -->
 <!-- <spline-viewer url="https://prod.spline.design/kjp9RqBuwMAtDNkk/scene.splinecode"></spline-viewer> -->
 <!-- <p style="margin-top: -100px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quibusdam reprehenderit, nam aperiam deleniti similique totam perferendis quo unde architecto perspiciatis reiciendis alias dicta quod illum in maiores non praesentium.</p> -->
-<footer class="footer">
+<footer class="footer fade-in">
     <div class="footerContainer">
         <!-- Logo Section -->
         <div class="footerColumn footerLogo">
             <img src="./Resources/Logo.png" alt="Digital Agency Logo">
-            <p>Empowering Your Digital Presence</p>
+            <p class="WhiteGlowEffect">Empowering Your Digital Presence</p>
         </div>
 
         <!-- Useful Links -->
@@ -1119,15 +465,117 @@ grid-row-gap: 0px;
     <div class="wave2"></div>
     <div class="wave2"></div>
     <div class="wave2"></div>
-</div></section>
+</div>
+<div class="custom-cursor"></div>
+</section>
 
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<!-- JS file -->
+ <script src="script.js"></script>
+<!-- GSAP linking -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <!-- Font Awesome Icons -->
 <script src="https://kit.fontawesome.com/8a2ac93fe1.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
 <script>
 
-    
+// Get the custom cursor element
+const cursor = document.querySelector('.custom-cursor');
+
+// Add event listener to track mouse movement
+document.addEventListener('mousemove', (e) => {
+  // Position the custom cursor based on mouse position
+  cursor.style.left = `${e.pageX - cursor.offsetWidth / 2}px`;
+  cursor.style.top = `${e.pageY - cursor.offsetHeight / 2}px`;
+});
+
+// Optional: Add a slight hover effect for clickable elements
+document.querySelectorAll('a, button').forEach((element) => {
+  element.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'scale(1.5)'; // Make the cursor larger when hovering over links
+  });
+  element.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'scale(1)'; // Reset the size
+  });
+});
+
+
+const timeline = gsap.timeline();
+
+// Loader Entrance
+timeline.to(".loader", {
+    duration: 1.5,
+    opacity: 1,
+    ease: "power2.inOut"
+});
+
+// Loader Animation
+timeline.to(".loader-clip-top", {
+    delay: 0.5,
+    clipPath: "inset(0 0 100% 0)",
+    duration: 2,
+    ease: "power4.inOut",
+}, "-=0.5");
+
+timeline.to(".loader-clip-bottom", {
+    delay: 0.5,
+    clipPath: "inset(100% 0 0 0)",
+    duration: 2,
+    ease: "power4.inOut",
+}, "-=2");
+
+timeline.to(".loader-clip-center", {
+    delay: 0.5,
+    clipPath: "inset(0 100% 0 0)",
+    duration: 2,
+    ease: "power4.inOut",
+}, "-=2");
+
+// Marquee Text Fade Out
+timeline.to(".marquee span", {
+    opacity: 0,
+    duration: 1,
+    ease: "power2.inOut",
+}, "-=2");
+
+// Loader Disappear
+timeline.to(".loader", {
+    delay: 1,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.inOut",
+    onComplete: () => {
+        document.querySelector(".loader").style.display = "none";
+    }
+});
+
+// Content Reveal
+timeline.to(".container", {
+    opacity: 1,
+    duration: 2,
+    ease: "power2.inOut",
+}, "-=1");
+  // Select all elements with the fade-in class
+  const fadeInElements = document.querySelectorAll('.fade-in');
+
+// Create an Intersection Observer
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Add visible class
+            observer.unobserve(entry.target); // Stop observing after it's visible
+        }
+    });
+});
+
+// Observe each fade-in element
+fadeInElements.forEach(element => {
+    observer.observe(element);
+});
+  
+// Carousel Logic
 const slider = document.querySelector('.slider');
 const cards = document.querySelectorAll('.Pricing-card');
 const next = document.getElementById('next');
@@ -1144,7 +592,7 @@ function updateCarousel() {
     });
 }
 
-// Event listener for the next button
+// Event listeners for carousel navigation
 next.addEventListener('click', () => {
     if (activeIndex < cards.length - 1) {
         activeIndex++;
@@ -1152,7 +600,6 @@ next.addEventListener('click', () => {
     }
 });
 
-// Event listener for the previous button
 prev.addEventListener('click', () => {
     if (activeIndex > 0) {
         activeIndex--;
@@ -1160,7 +607,204 @@ prev.addEventListener('click', () => {
     }
 });
 
-updateCarousel(); // Call on page load to apply initial state
+updateCarousel(); // Apply initial state on page load
+
+// Gallery Logic
+window.onload = function () {
+    const gallery = document.querySelector(".gallery");
+    const previewImage = document.querySelector(".preview-img img");
+
+    // Mouse-based rotation with debounce for performance
+    let lastMouseMove = 0;
+    const mouseMoveHandler = (event) => {
+        const now = Date.now();
+        if (now - lastMouseMove > 10) { // Only process every 10ms
+            const x = event.clientX;
+            const y = event.clientY;
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+
+            const percentX = (x - centerX) / centerX;
+            const percentY = (y - centerY) / centerY;
+
+            const rotateX = 55 + percentY * 2;
+            const rotateY = percentX * 2;
+
+            gsap.to(gallery, {
+                duration: 1,
+                ease: "power2.out",
+                rotateX: rotateX,
+                rotateY: rotateY,
+                overwrite: "auto",
+            });
+            lastMouseMove = now;
+        }
+    };
+    document.addEventListener("mousemove", mouseMoveHandler);
+
+    // Create gallery items using DocumentFragment for performance
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < 30; i++) { // Create 30 items
+        const item = document.createElement("div");
+        item.className = "item";
+        const img = document.createElement("img");
+        img.src = "./Resources/img" + ((i % 15) + 1) + ".png";
+        item.appendChild(img);
+        fragment.appendChild(item);
+    }
+    gallery.appendChild(fragment); // Append all items at once
+
+    const items = document.querySelectorAll(".item");
+    const numberOfItems = items.length;
+    const angleIncrement = 360 / numberOfItems;
+
+    items.forEach((item, index) => {
+        gsap.set(item, {
+            rotationY: 90,
+            rotationZ: index * angleIncrement - 90,
+            transformOrigin: "50% 500px",
+        });
+
+        // Event listeners for mouseover and mouseout
+        item.addEventListener("mouseover", function () {
+            const imgInsideItem = item.querySelector("img");
+            previewImage.src = imgInsideItem.src;
+            gsap.to(item, {
+                x: 10,
+                z: 10,
+                y: 10,
+                ease: "power2.out",
+                duration: 0.5,
+            });
+        });
+
+        item.addEventListener("mouseout", function () {
+            previewImage.src = "./Resources/img";
+            gsap.to(item, {
+                x: 0,
+                y: 0,
+                z: 0,
+                ease: "power2.out",
+                duration: 0.5,
+            });
+        });
+    });
+};
+
+// Team Section Logic
+document.querySelectorAll('#team-section .team-link').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        const card = link.querySelector('.TeamCard');
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(-10px)'; // Slight upward movement
+    });
+
+    link.addEventListener('mouseleave', () => {
+        const card = link.querySelector('.TeamCard');
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(0)'; // Reset position
+    });
+});
+
+// Timeline Animation Visibility Logic
+(function () {
+    "use strict";
+
+    const items = document.querySelectorAll(".timeline li");
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+    }
+
+    function callbackFunc() {
+        items.forEach(item => {
+            if (isElementInViewport(item)) {
+                item.classList.add("in-view");
+            }
+        });
+    }
+
+    window.addEventListener("load", callbackFunc);
+    window.addEventListener("resize", callbackFunc);
+    window.addEventListener("scroll", callbackFunc);
+})();
+
+// FAQ Toggle Logic
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        // Close other open answers
+        faqQuestions.forEach(item => {
+            if (item !== question) {
+                item.classList.remove('active');
+                item.nextElementSibling.style.maxHeight = null;
+            }
+        });
+
+        // Toggle active class and max height for clicked question
+        question.classList.toggle('active');
+        const answer = question.nextElementSibling;
+        if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    });
+});
+
+const textTypewriter = "At CreativePulse, we blend creativity and technology to elevate brands. Our team specializes in web development, digital marketing, branding, and content creation, delivering tailored solutions for startups and established businesses. Let us drive your digital success.";
+const speedTypewriter = 50; // Speed of typing effect
+let indexTypewriter = 0;
+const typewriterElement = document.getElementById('typewriter');
+const words = textTypewriter.split(' '); // Split the text into individual words
+
+// Function to type out each letter of the sentence with a delay
+function typeLetter() {
+    if (indexTypewriter < words.length) {
+        const wordSpan = document.createElement('span'); // Create a span element for each word
+        wordSpan.classList.add('word');
+        wordSpan.textContent = words[indexTypewriter] + ' '; // Add the word and space
+        typewriterElement.appendChild(wordSpan); // Append the word to the typewriter element
+        indexTypewriter++;
+
+        // Adjust the delay based on the length of the word
+        setTimeout(typeLetter, speedTypewriter * words[indexTypewriter]?.length || speedTypewriter);
+    }
+}
+
+// Call the function to start typing effect
+typeLetter();
+
+
+// Parallax Effect Logic (with throttle)
+let lastMove = 0;
+const spansSlow = document.querySelectorAll('.spanSlow');
+const spansFast = document.querySelectorAll('.spanFast');
+let width = window.innerWidth;
+
+function handleMouseMove(e) {
+    const now = Date.now();
+    if (now - lastMove > 10) { // Only update every 10ms
+        let normalizedPosition = e.pageX / (width / 2) - 1;
+        let speedSlow = 100 * normalizedPosition;
+        let speedFast = 200 * normalizedPosition;
+        spansSlow.forEach((span) => span.style.transform = `translate(${speedSlow}px)`);
+        spansFast.forEach((span) => span.style.transform = `translate(${speedFast}px)`);
+        lastMove = now;
+    }
+}
+
+function handleWindowResize() {
+    width = window.innerWidth;
+}
+
+window.addEventListener('mousemove', handleMouseMove);
+window.addEventListener('resize', handleWindowResize);
+
 
 
 </script>
