@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parallax Star Background</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <style>
+        html {
+            height: 100%;
+            overflow: hidden;
+            background: radial-gradient(ellipse at bottom, #41063c 0%, #090a0f 100%);
+        }
+
+        body{
+            display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+        }
+        #FormContaianer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 130%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.4); /* Transparent background */
+            padding: 20px;
+            border-radius: 25px; /* Rounded corners */
+            backdrop-filter: blur(5px); /* Blurring the background */
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container h2 {
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 1rem 0.75rem;
+            margin: 10px 0;
+            border-radius: 15px; /* Rounded corners */
+            border: 2px solid rgba(255, 255, 255, 0.055); /* Light border */
+            background-color: rgba(255, 255, 255, 0.2); /* Transparent input background */
+            color: white;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container input:focus {
+            background-color: rgba(255, 255, 255, 0.3); /* Focus effect */
+            border-color: #8c0988; /* Change border color on focus */
+            outline: none;
+        }
+
+        .form-container .submit {
+            padding: 1rem;
+            width: 100%;
+            background-color: rgba(2, 0, 2, 0.8); /* Transparent button background */
+            color: white;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-container .submit:hover {
+            background-color: rgba(0, 0, 0, 0.6); /* Darken on hover */
+        }
+
+        .form-container .link {
+            font-size: 0.9rem;
+            color: #ffffff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .form-container .link:hover {
+            color: #8c0988; /* Change color on hover */
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Signup Page -->
+    <div id="signup" class="page">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-name" placeholder="Enter your name" required>
+            <input type="email" id="signup-email" placeholder="Enter your email" required>
+            <input type="password" id="signup-password" placeholder="Enter your password" required>
+            <button id="signup-btn" class="submit">Sign Up</button>
+            <p>Already have an account? <span id="show-login" class="link">Log In</span></p>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login" class="page hidden">
+        <div class="form-container">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Enter your email" required>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+            <button id="login-btn" class="submit">Login</button>
+            <p>Don't have an account? <span id="show-signup" class="link">Sign Up</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Show the login form and hide the signup form
+        document.getElementById('show-login').addEventListener('click', () => {
+            document.getElementById('signup').classList.add('hidden');
+            document.getElementById('login').classList.remove('hidden');
+        });
+
+        // Show the signup form and hide the login form
+        document.getElementById('show-signup').addEventListener('click', () => {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('signup').classList.remove('hidden');
+        });
+
+        // Signup functionality with navigation to another HTML file
+        document.getElementById('signup-btn').addEventListener('click', () => {
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+
+            if (name && email && password) {
+                localStorage.setItem('user', JSON.stringify({ name, email, password }));
+                alert('Sign Up Successful! Redirecting to home page...');
+                window.location.href = 'index.html'; // Redirect to another HTML file
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Login functionality with navigation to another HTML file
+        document.getElementById('login-btn').addEventListener('click', () => {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (user && user.email === email && user.password === password) {
+                alert(`Welcome back, ${user.name}! Redirecting to home page...`);
+                window.location.href = 'index.html'; // Redirect to another HTML file
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

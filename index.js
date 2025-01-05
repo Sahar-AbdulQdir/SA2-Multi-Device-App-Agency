@@ -210,45 +210,6 @@ window.onload = function () {
 };
 
 // Team Section Logic
-document.querySelectorAll('#team-section .team-link').forEach(link => {
-    link.addEventListener('mouseenter', () => {
-        const card = link.querySelector('.TeamCard');
-        card.style.opacity = 1;
-        card.style.transform = 'translateY(-10px)'; // Slight upward movement
-    });
-
-    link.addEventListener('mouseleave', () => {
-        const card = link.querySelector('.TeamCard');
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(0)'; // Reset position
-    });
-});
-
-// Timeline Animation Visibility Logic
-
-
-// FAQ Toggle Logic
-const faqQuestions = document.querySelectorAll('.faq-question');
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        // Close other open answers
-        faqQuestions.forEach(item => {
-            if (item !== question) {
-                item.classList.remove('active');
-                item.nextElementSibling.style.maxHeight = null;
-            }
-        });
-
-        // Toggle active class and max height for clicked question
-        question.classList.toggle('active');
-        const answer = question.nextElementSibling;
-        if (answer.style.maxHeight) {
-            answer.style.maxHeight = null;
-        } else {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-        }
-    });
-});
 
 const textTypewriter = "At CreativePulse, we blend creativity and technology to elevate brands. Our team specializes in web development, digital marketing, branding, and content creation, delivering tailored solutions for startups and established businesses. Let us drive your digital success.";
 const speedTypewriter = 50; // Speed of typing effect
@@ -299,3 +260,41 @@ function handleWindowResize() {
 window.addEventListener('mousemove', handleMouseMove);
 window.addEventListener('resize', handleWindowResize);
 
+// Add an event listener to the form for the 'submit' event
+document.getElementById('contact-form').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Step 1: Get the form data
+    const email = document.getElementById('email').value; // Get the email input value
+    const message = document.getElementById('textarea').value; // Get the textarea input value
+
+    console.log('Sending data:', { email, message }); // Debugging: log the data being sent
+
+    // Step 2: Send data to the backend
+    try {
+        const response = await fetch('http://127.0.0.1:4000/api/contact', { // Use the full URL for backend
+            method: 'POST', // HTTP method
+            headers: {
+                'Content-Type': 'application/json' // Inform the server we're sending JSON
+            },
+            body: JSON.stringify({ email, message }) // Convert the data to JSON
+        });
+
+        console.log('Response:', response); // Debugging: log the server response
+
+        if (response.ok) {
+            // Step 3: Handle successful submission
+            alert('Your message was sent successfully!'); // Display a success message
+            document.getElementById('contact-form').reset(); // Clear the form inputs
+        } else {
+            // Step 4: Handle errors returned by the server
+            const errorData = await response.text(); // Read the error message from the response
+            console.error('Server error:', errorData); // Log the error
+            alert('There was an issue sending your message. Please try again.');
+        }
+    } catch (error) {
+        // Step 5: Handle network or other unexpected errors
+        console.error('Network error:', error); // Log the error for debugging
+        alert('Error: ' + error.message);
+    }
+});

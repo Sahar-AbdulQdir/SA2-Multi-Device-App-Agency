@@ -1,179 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Agu+Display&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+NZ+Guides&family=Teko:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Agu+Display&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+NZ+Guides&family=Teko:wght@300..700&display=swap");
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 10;
-  background: #b45da8;
-}
-
-.loader-clip {
-  position: absolute;
-  width: 100%;
-  height: 33.33%;
-  overflow: hidden;
-}
-
-.loader-clip-top {
-  top: 0;
-  background: black;
-}
-
-.loader-clip-center {
-  top: 33.33%;
-  background: #b45da8;
-}
-
-.loader-clip-bottom {
-  bottom: 0;
-  background: black;
-}
-
-.marquee {
-  position: absolute;
-  white-space: nowrap;
-  font-size: 16vw;
-  display: flex;
-  gap: 1em;
-  margin-top: -100px;
-}
-
-.loader-clip-top .marquee,
-.loader-clip-bottom .marquee {
-  animation: marquee-left 10s linear infinite;
-  color: white;
-  font-size: 15em;
-  font-family: "Agbalumo", serif;
-  font-weight: 10;
-  font-style: normal;
-}
-
-.loader-clip-center .marquee {
-  animation: marquee-right 10s linear infinite;
-  color: rgb(0, 0, 0);
-  font-size: 15em;
-  font-family: "Agbalumo", serif;
-  font-weight: 10;
-  font-style: normal;
-}
-
-@keyframes marquee-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes marquee-right {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-span .copymark {
-  font-size: 0.3em;
-  margin-top: -550px !important;
-}
-
-/* Add animation styles */
-.fade-in {
-  opacity: 0;
-  transition: opacity 3s ease-in-out;
-  transform: translateX(0%);
-  animation: none;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  animation: waveEffect 2s ease-in-out 0s 1 normal forwards;
-}
-
-@keyframes waveEffect {
-  0% {
-    transform: translateY(0%) rotate(0deg);
-  }
-  15% {
-    transform: translateY(-10px) rotate(-5deg);
-  }
-  30% {
-    transform: translateY(10px) rotate(5deg);
-  }
-  45% {
-    transform: translateY(-8px) rotate(-4deg);
-  }
-  60% {
-    transform: translateY(6px) rotate(3deg);
-  }
-  75% {
-    transform: translateY(-4px) rotate(-2deg);
-  }
-  100% {
-    transform: translateY(0%) rotate(0deg);
-  }
-}
-.fade-in.visible {
-  opacity: 1;
-}
-
-/* Set the default cursor to be the custom one */
+/* This is the global body styling */
 body {
-  cursor: none; /* Hide the default cursor */
+  margin: 0; /* Removes default browser margin */
+  font-family: Arial, Helvetica, sans-serif; /* Fallback font stack */
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(98, 36, 94) 9%, rgb(120, 19, 125) 27%, rgb(245, 245, 245) 49%, rgb(202, 136, 217) 67%, rgb(192, 72, 221) 81%, rgb(0, 0, 0) 100%); /* Diagonal gradient background */
+  color: white; /* Sets default text color */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  cursor: none; /* Hides the default cursor */
 }
 
-/* Create the custom rotating cursor */
+/* This is the style for a custom rotating cursor with glowing and pulsing effects */
 .custom-cursor {
   position: absolute;
   width: 30px;
   height: 30px;
-  border: 2px solid rgba(233, 139, 215, 0.7803921569); /* Pinkish border */
-  border-radius: 50%; /* Makes it a perfect circle */
-  pointer-events: none; /* Ensures it doesn't interfere with other elements */
-  transition: transform 0.2s ease, border 0.2s ease; /* Smooth movement and effects */
-  animation: rotate 2s linear infinite, pulse 2s infinite; /* Add rotation and pulsing animations */
-  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Glowing effect */
+  border: 2px solid rgba(233, 139, 215, 0.7803921569);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.2s ease, border 0.2s ease;
+  animation: rotate 2s linear infinite, pulse 2s infinite;
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
 }
 
-/* Animation for rotation */
+/* This is the keyframes for rotation animation */
 @keyframes rotate {
   0% {
-    transform: rotate(0deg); /* Start at 0 degrees */
+    transform: rotate(0deg); /* Start rotation */
   }
   100% {
     transform: rotate(360deg); /* Complete a full rotation */
   }
 }
-/* Animation for pulsing effect */
+/* This is the keyframes for pulsing animation */
 @keyframes pulse {
   0% {
-    transform: scale(1); /* Normal size */
+    transform: scale(1);
   }
   50% {
-    transform: scale(1.2); /* Slightly bigger */
+    transform: scale(1.2); /* Slightly bigger size */
   }
   100% {
-    transform: scale(1); /* Back to normal */
+    transform: scale(1);
   }
 }
-/* Animation for the pulsating effect */
-@keyframes pulse {
-  0% {
-    transform: scale(1); /* Normal size */
-  }
-  50% {
-    transform: scale(1.2); /* Slightly bigger */
-  }
-  100% {
-    transform: scale(1); /* Back to normal */
-  }
-}
-/* Animation for the glow effect */
+/* This is the keyframes for glowing animation */
 @keyframes glow {
   0% {
     box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
@@ -185,26 +56,148 @@ body {
     box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
   }
 }
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(98, 36, 94) 9%, rgb(120, 19, 125) 27%, rgb(245, 245, 245) 49%, rgb(202, 136, 217) 67%, rgb(192, 72, 221) 81%, rgb(0, 0, 0) 100%); /* Diagonal gradient */
-  color: white;
-  overflow-x: hidden;
+/* This is the loader section styles */
+.loader {
+  position: fixed; /* Ensure loader covers the screen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevent content overflow */
+  z-index: 10; /* Place above other elements */
+  background: #b45da8; /* Loader background color */
+}
+
+/* This is the container for clipping the loader sections */
+.loader-clip {
+  position: absolute; /* Allows precise placement */
+  width: 100%; /* Full width */
+  height: 33.33%; /* Divide into three equal sections */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.loader-clip-top {
+  top: 0; /* Position at the top */
+  background: black; /* Black background for the top clip */
+}
+
+.loader-clip-center {
+  top: 33.33%; /* Center position */
+  background: #b45da8; /* Matching loader background */
+}
+
+.loader-clip-bottom {
+  bottom: 0; /* Position at the bottom */
+  background: black; /* Black background for the bottom clip */
+}
+
+/* This is the marquee styling */
+.marquee {
+  position: absolute; /* Allows animation positioning */
+  white-space: nowrap; /* Prevent text wrapping */
+  font-size: 16vw; /* Responsive font size */
+  display: flex; /* Align elements in a row */
+  gap: 1em; /* Space between marquee items */
+  margin-top: -100px; /* Adjust vertical positioning */
+}
+
+.loader-clip-top .marquee,
+.loader-clip-bottom .marquee {
+  animation: marquee-left 10s linear infinite; /* Leftward scrolling animation */
+  color: white; /* Text color for top and bottom marquees */
+  font-size: 15em; /* Large font size */
+  font-family: "Agbalumo", serif; /* Custom serif font */
+  font-weight: 10; /* Set font weight */
+  font-style: normal; /* Normal font style */
+}
+
+.loader-clip-center .marquee {
+  animation: marquee-right 10s linear infinite; /* Rightward scrolling animation */
+  color: rgb(0, 0, 0); /* Black text color */
+  font-size: 15em; /* Large font size */
+  font-family: "Agbalumo", serif; /* Custom serif font */
+  font-weight: 10; /* Set font weight */
+  font-style: normal; /* Normal font style */
+}
+
+/* This is the marquee leftward animation */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll off screen */
+  }
+}
+/* This is the marquee rightward animation */
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-100%); /* Start off screen */
+  }
+  100% {
+    transform: translateX(0); /* Scroll into view */
+  }
+}
+/* This is the styling for the copy mark within a span */
+span .copymark {
+  font-size: 0.3em; /* Small text size */
+  margin-top: -550px !important; /* Adjust vertical positioning */
+}
+
+/* This is the base style for the fade-in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 3s ease-in-out; /* This is for a smooth fade-in transition */
+  transform: translateX(0%); /* This is the initial position */
+  animation: none; /* No animation by default */
+}
+
+/* This is the style for visible elements with fade-in and wave effect */
+.fade-in.visible {
+  opacity: 1; /* Makes the element fully visible */
+  animation: waveEffect 2s ease-in-out 0s 1 normal forwards; /* This is the wave animation */
+}
+
+/* This is the keyframes for the wave effect animation */
+@keyframes waveEffect {
+  0% {
+    transform: translateY(0%) rotate(0deg); /* Initial position */
+  }
+  15% {
+    transform: translateY(-10px) rotate(-5deg); /* Slight upward and left rotation */
+  }
+  30% {
+    transform: translateY(10px) rotate(5deg); /* Slight downward and right rotation */
+  }
+  45% {
+    transform: translateY(-8px) rotate(-4deg); /* Smaller upward movement */
+  }
+  60% {
+    transform: translateY(6px) rotate(3deg); /* Smaller downward movement */
+  }
+  75% {
+    transform: translateY(-4px) rotate(-2deg); /* Slight upward movement */
+  }
+  100% {
+    transform: translateY(0%) rotate(0deg); /* Back to the original position */
+  }
+}
+/* Ensures the opacity remains 1 when visible */
+.fade-in.visible {
+  opacity: 1;
 }
 
 .main {
   position: relative;
-  margin: 20px auto; /* Centers the container */
-  max-width: 1400px; /* Restricts the width */
-  border-radius: 20px; /* Rounded corners */
-  border: 2px solid #fbe6f4; /* Vibrant border color */
-  box-shadow: 0 0 5px rgba(208, 31, 217, 0.7019607843), 0 0 3px rgba(208, 31, 217, 0.5019607843); /* Glowy shadow effect */
-  background: rgb(0, 0, 0); /* Semi-transparent background */
+  margin: 20px auto;
+  max-width: 1400px;
+  border-radius: 20px;
+  border: 2px solid #fbe6f4;
+  box-shadow: 0 0 5px rgba(208, 31, 217, 0.7019607843), 0 0 3px rgba(208, 31, 217, 0.5019607843);
+  background: rgb(0, 0, 0);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px); /* Blur effect */
   overflow-x: hidden; /* Ensures content stays inside */
-  /* opacity: 0; */
   font-family: "Agbalumo", serif;
   font-weight: 10;
   font-style: normal;
@@ -272,24 +265,27 @@ body {
     transform: translateY(4000px);
   }
 }
+/* This is for making the scrollbar wider and setting a black background */
 ::-webkit-scrollbar {
   width: 20px;
   background: #000;
 }
 
+/* This is for the scrollbar thumb and making it colorful and round */
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(#000, #56015b);
   border-radius: 6px;
   box-shadow: 0 0 10px #56015b, 0 0 20px #56015b;
 }
 
+/* This is for a glowing white text effect */
 .WhiteGlowEffect {
   color: #ffffff; /* White text */
   text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff;
   transition: TextShadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/* Hover effect for white glow */
+/* This makes the glow brighter and text a little bigger when you hover */
 .WhiteGlowEffect:hover {
   text-shadow: 0 0 16px #830e89, 0 0 32px #630f56; /* Intensifies the glow */
   transform: scale(1.02); /* Slightly enlarges the text */
@@ -297,922 +293,965 @@ body {
 
 /* Header styles */
 #header {
-  background-color: #000;
-  color: white;
-  padding: 10px 40px;
-  border-radius: 25px;
+  background-color: #000; /* Sets the background color to black */
+  color: white; /* Sets the text color to white */
+  padding: 10px 40px; /* Adds padding inside the header */
+  border-radius: 25px; /* Rounded corners for the header */
 }
 
+/* Styles for the navigation part */
 .navPart {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Uses flexbox for layout */
+  justify-content: space-between; /* Spaces out items */
+  align-items: center; /* Aligns items vertically in the center */
 }
 
+/* Styles for the logo section */
 .logo {
-  display: flex;
-  align-items: center;
-  position: relative;
-  left: -60px;
-  top: -5px;
-  overflow: visible;
+  display: flex; /* Uses flexbox for layout */
+  align-items: center; /* Aligns items vertically */
+  position: relative; /* Allows for positioning adjustments */
+  left: -60px; /* Moves logo to the left */
+  top: -5px; /* Moves logo upwards */
+  overflow: visible; /* Makes sure overflow is visible */
 }
 
+/* Styles for the logo image */
 .logo img {
-  height: 120px;
-  margin-right: 10px;
+  height: 120px; /* Sets the image height */
+  margin-right: 10px; /* Adds space to the right of the image */
 }
 
+/* Styles for the logo heading */
 .logo h3 {
-  width: 250px;
-  position: relative;
-  left: -40px;
-  font-size: 2em;
+  width: 250px; /* Sets the width of the heading */
+  position: relative; /* Allows for positioning adjustments */
+  left: -40px; /* Moves the heading to the left */
+  font-size: 2em; /* Sets the font size */
 }
 
+/* Styles for the navigation list */
 .navList ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
+  display: flex; /* Uses flexbox for layout */
+  list-style: none; /* Removes bullet points from the list */
+  margin: 0; /* Removes margin */
+  padding: 0; /* Removes padding */
+  gap: 20px; /* Adds space between items */
 }
 
+/* Styles for each navigation list item */
 .navList li {
-  font-size: 1.7em;
-  position: relative;
+  font-size: 1.7em; /* Sets the font size */
+  position: relative; /* Allows for positioning adjustments */
 }
 
+/* Styles for the navigation links */
 .navList a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s;
+  text-decoration: none; /* Removes underline from links */
+  color: white; /* Sets the link color to white */
+  transition: color 0.3s; /* Smooth transition for color change */
 }
 
+/* Styles for the navigation link hover effect */
 .navList a:hover {
-  color: #a315b9;
+  color: #a315b9; /* Changes link color on hover */
 }
 
+/* Styles for the button */
 .button {
-  width: 150px;
-  padding: 10px 30px;
-  position: relative;
-  display: block;
-  text-decoration: none;
-  overflow: hidden;
-  border: 0;
-  cursor: pointer;
-  border-radius: 2rem;
-  box-shadow: 0 0 5px 0px #b45da8;
-  position: relative;
-  top: 5px;
+  width: 150px; /* Sets the button width */
+  padding: 10px 30px; /* Adds padding inside the button */
+  position: relative; /* Allows for positioning adjustments */
+  display: block; /* Makes button a block element */
+  text-decoration: none; /* Removes underline from button link */
+  overflow: hidden; /* Hides overflow content */
+  border: 0; /* Removes border */
+  border-radius: 2rem; /* Rounded corners for the button */
+  box-shadow: 0 0 5px 0px #b45da8; /* Adds a shadow effect */
+  top: 5px; /* Moves the button slightly down */
 }
 
+/* Styles for the button hover effect */
 .button:hover .wave {
-  top: -120px;
+  top: -120px; /* Moves the wave element upwards on hover */
 }
 
+/* Styles for the button text */
 .text {
-  position: relative;
-  z-index: 1;
-  color: white;
-  font-size: 15px;
-  letter-spacing: 3px;
-  font-weight: 600;
+  position: relative; /* Allows for positioning adjustments */
+  z-index: 1; /* Makes sure text is on top */
+  color: white; /* Sets the text color to white */
+  font-size: 15px; /* Sets the font size */
+  letter-spacing: 3px; /* Adds space between letters */
+  font-weight: 600; /* Sets the font weight */
 }
 
+/* Styles for the wave element inside the button */
 .wave {
-  width: 200px;
-  height: 200px;
-  background-color: #9a448f;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 0;
-  top: -70px;
-  transition: 0.4s;
+  width: 200px; /* Sets the width of the wave */
+  height: 200px; /* Sets the height of the wave */
+  background-color: #9a448f; /* Sets the background color */
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Adds an inner shadow */
+  position: absolute; /* Positions the wave absolutely */
+  left: 0; /* Aligns the wave to the left */
+  top: -70px; /* Positions the wave above the button */
+  transition: 0.4s; /* Smooth transition for wave effect */
 }
 
+/* Styles for the wave before and after pseudo-elements */
 .wave::before, a .wave::after {
-  width: 200%;
-  height: 200%;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -75%);
+  width: 200%; /* Sets the width of the pseudo-elements */
+  height: 200%; /* Sets the height of the pseudo-elements */
+  content: ""; /* Adds content to the pseudo-elements */
+  position: absolute; /* Positions the pseudo-elements absolutely */
+  top: 0; /* Aligns them to the top */
+  left: 50%; /* Centers them horizontally */
+  transform: translate(-50%, -75%); /* Adjusts their position */
 }
 
+/* Styles for the wave before pseudo-element */
 .wave::before {
-  border-radius: 45%;
-  background-color: #832f78;
-  animation: wave 5s linear infinite;
+  border-radius: 45%; /* Makes the wave rounded */
+  background-color: #832f78; /* Sets the background color */
+  animation: wave 5s linear infinite; /* Animates the wave */
 }
 
+/* Styles for the wave after pseudo-element */
 .wave::after {
-  border-radius: 40%;
-  background-color: #b45da8;
-  animation: wave 10s linear infinite;
+  border-radius: 40%; /* Makes the wave rounded */
+  background-color: #b45da8; /* Sets the background color */
+  animation: wave 10s linear infinite; /* Animates the wave */
 }
 
+/* Keyframes for the wave animation */
 @keyframes wave {
   0% {
-    transform: translate(-50%, -75%) rotate(0deg);
+    transform: translate(-50%, -75%) rotate(0deg); /* Starts the rotation */
   }
   100% {
-    transform: translate(-50%, -75%) rotate(300deg);
+    transform: translate(-50%, -75%) rotate(300deg); /* Ends the rotation */
   }
 }
-/* Intro section styles */
+/* This is the Intro section styles */
 .Intro {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  /* margin-top: 150px; */
-  height: 80vh; /* Set the height of the intro section */
+  position: relative; /* Position the section for absolute positioning of child elements */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  justify-content: center; /* Center elements vertically */
+  text-align: center; /* Align text to the center */
+  padding: 20px; /* Add spacing around the content */
+  height: 80vh; /* Set the height of the section */
 }
 
 .Intro video {
-  position: absolute;
+  position: absolute; /* Place video within the parent section */
   top: 0;
   left: 0;
-  width: 120%;
-  height: 100%;
+  width: 100%; /* Make video fill the width */
+  height: 100%; /* Make video fill the height */
   -o-object-fit: cover;
-     object-fit: cover; /* Make the video cover the entire section without distortion */
-  z-index: -1; /* Place the video behind the text */
+     object-fit: cover; /* Ensure video covers the section without distortion */
+  z-index: -1; /* Place the video behind other elements */
 }
 
 .Intro .partOne {
-  margin-top: -20px;
+  margin-top: -20px; /* Adjust spacing above the content */
 }
 
 .Intro .partOne h1 {
-  font-size: 2.5em;
-  margin: 20px 0;
+  font-size: 2.5em; /* Adjust heading size */
+  margin: 20px 0; /* Add vertical spacing */
 }
 
 .Intro .partOne p {
-  font-size: 1.2em;
-  margin-bottom: 50px;
-  max-width: 600px;
+  font-size: 1.2em; /* Adjust paragraph size */
+  margin-bottom: 50px; /* Add spacing below */
+  max-width: 600px; /* Limit the width of the paragraph */
 }
 
 .Intro .partTwo {
-  display: flex;
-  gap: 85px;
+  display: flex; /* Align elements side by side */
+  gap: 85px; /* Add spacing between items */
 }
 
 .Intro button {
-  background: linear-gradient(45deg, #d769ee, #b45da8);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: transform 0.3s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #d769ee, #b45da8); /* Gradient background */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 25px; /* Rounded corners */
+  padding: 10px 20px; /* Button padding */
+  font-size: 1em; /* Adjust font size */
+  transition: transform 0.3s; /* Smooth scaling effect on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
 
 .Intro button:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
 
+/* This is the main container styles */
+.main {
+  position: relative; /* Enables child positioning */
+  margin: 20px auto; /* Center the container */
+  max-width: 1400px; /* Restrict the width */
+  border-radius: 20px; /* Rounded corners */
+  border: 2px solid #fbe6f4; /* Vibrant border color */
+  box-shadow: 0 0 5px rgba(208, 31, 217, 0.7019607843), 0 0 3px rgba(208, 31, 217, 0.5019607843); /* Glowy shadow effect */
+  background: rgb(0, 0, 0); /* Black background */
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px); /* Apply a blur effect */
+  overflow: visible; /* Allow content to overflow */
+  font-family: "Agbalumo", serif; /* Custom font */
+  font-weight: 10; /* Adjust font weight */
+  font-style: normal; /* Regular text style */
+}
+
+/* This is for the About Us section layout */
 #AboutUs {
-  display: flex;
-  flex-direction: column;
-  margin-top: 40px;
-  justify-content: space-between;
-  align-items: center;
-  gap: 100px;
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Items stacked vertically */
+  margin-top: 40px; /* Space at the top */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items horizontally */
+  gap: 100px; /* Space between items */
 }
 
+/* This is for the text in About Us section */
 #AboutUs .Abouttxt {
-  margin-left: 70px;
-  color: white;
-  font-size: 1.3em;
+  margin-left: 70px; /* Space on the left */
+  color: white; /* White text color */
+  font-size: 1.3em; /* Slightly larger font */
 }
 
+/* This is for the About Us heading */
 #AboutUs .Abouttxt h1 {
-  text-decoration-style: double;
-  font-size: 2.7em;
+  text-decoration-style: double; /* Double underline effect */
+  font-size: 2.7em; /* Big font size */
 }
 
+/* This is for the paragraph inside About Us */
 #AboutUs .Abouttxt p {
-  width: 1200px;
-  font-size: 1em;
-  text-align: left;
-  line-height: 1.5;
+  width: 1200px; /* Width of the paragraph */
+  font-size: 1em; /* Regular font size */
+  text-align: left; /* Align text to the left */
+  line-height: 1.5; /* Space between lines */
 }
 
+/* This is for the Spline element */
 #AboutUs .Spline {
-  margin-top: 50px;
-  width: 900px;
+  margin-top: 50px; /* Space at the top */
+  width: 900px; /* Width of the Spline */
 }
 
+/* This is for the typewriter text effect */
 #typewriter {
-  border-right: solid 3px rgba(255, 0, 153, 0.75);
+  border-right: solid 3px rgba(255, 0, 153, 0.75); /* Blinking cursor */
   white-space: normal; /* Allow text wrapping */
-  overflow: hidden;
-  font-family: "Source Code Pro", monospace;
-  font-size: 2em;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  text-align: center;
-  transition: text-shadow 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+  overflow: hidden; /* Hide extra text */
+  font-family: "Source Code Pro", monospace; /* Monospace font */
+  font-size: 2em; /* Bigger font size */
+  color: rgba(255, 255, 255, 0.7); /* Light white text */
+  margin: 0; /* No margin */
+  text-align: center; /* Center the text */
+  transition: text-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
 }
 
-/* Cursor animations */
+/* This is for the cursor animations */
 @keyframes animated-cursor {
   from {
     border-right-color: rgba(242, 0, 255, 0.75);
-  }
+  } /* Start color */
   to {
     border-right-color: rgb(121, 8, 106);
-  }
+  } /* End color */
 }
+/* This makes the cursor blink */
 #typewriter {
-  animation: animated-cursor 600ms steps(29, end) infinite;
+  animation: animated-cursor 600ms steps(29, end) infinite; /* Infinite blinking */
 }
 
-/* Highlight effect on hover at word level */
+/* This is for the word highlight on hover */
 span.word:hover {
-  text-shadow: 0 0 10px rgba(255, 0, 153, 0.75), 0 0 20px rgba(255, 0, 153, 0.75);
-  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(255, 0, 153, 0.75), 0 0 20px rgba(255, 0, 153, 0.75); /* Glow effect */
+  transform: scale(1.1); /* Slightly bigger word */
 }
 
+/* Styling for the Services section */
 #Services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  margin-top: -4%;
+  display: flex; /* Uses flexbox for layout */
+  flex-direction: column; /* Stacks content vertically */
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically */
+  text-align: center; /* Centers text */
+  padding: 20px; /* Adds padding inside the section */
+  margin-top: -4%; /* Moves the section up */
 }
 
+/* Styling for the main heading in Services */
 #Services h1 {
-  font-size: 5.3em;
-  color: white;
+  font-size: 5.3em; /* Sets the font size */
+  color: white; /* Sets the text color */
 }
 
+/* Styling for the span inside the main heading */
 #Services h1 span {
-  color: #a315b9;
+  color: #a315b9; /* Changes color of span */
 }
 
+/* Styling for the ServicesCards container */
 .ServicesCards {
-  display: flex;
-  gap: 60px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px;
+  display: flex; /* Uses flexbox for layout */
+  gap: 60px; /* Adds space between cards */
+  flex-wrap: wrap; /* Allows wrapping of cards */
+  justify-content: center; /* Centers the cards */
+  margin: 20px; /* Adds margin around cards */
 }
 
-/* From Uiverse.io by Pravins01 */
+/* Styling for each card */
 .card {
-  position: relative;
-  width: 190px;
-  height: 254px;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  padding: 12px;
-  gap: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: white;
+  position: relative; /* Allows for positioning adjustments */
+  width: 190px; /* Sets the width of the card */
+  height: 254px; /* Sets the height of the card */
+  background-color: #000; /* Sets the background color to black */
+  display: flex; /* Uses flexbox for layout */
+  flex-direction: column; /* Stacks content vertically */
+  justify-content: end; /* Aligns content at the bottom */
+  padding: 12px; /* Adds padding inside the card */
+  gap: 12px; /* Adds space between elements inside the card */
+  border-radius: 8px; /* Adds rounded corners */
+  color: white; /* Sets text color to white */
 }
 
+/* Styling for the card's before pseudo-element */
 .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  left: -5px;
-  margin: auto;
-  width: 225px;
-  height: 285px;
-  border-radius: 10px;
-  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
-  z-index: -10;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  content: ""; /* Adds content */
+  position: absolute; /* Positions it absolutely */
+  inset: 0; /* Aligns it to the edges of the card */
+  left: -5px; /* Moves it slightly to the left */
+  margin: auto; /* Centers it */
+  width: 225px; /* Sets the width */
+  height: 285px; /* Sets the height */
+  border-radius: 10px; /* Rounds the corners */
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%); /* Gradient background */
+  z-index: -10; /* Puts it behind other elements */
+  pointer-events: none; /* Disables interaction */
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth transition */
 }
 
+/* Styling for the card's after pseudo-element */
 .card::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
-  transform: translate3d(0, 0, 0) scale(0.95);
-  filter: blur(20px);
+  content: ""; /* Adds content */
+  z-index: -1; /* Puts it behind other elements */
+  position: absolute; /* Positions it absolutely */
+  inset: 0; /* Aligns it to the edges of the card */
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%); /* Gradient background */
+  transform: translate3d(0, 0, 0) scale(0.95); /* Adjusts the size */
+  filter: blur(20px); /* Applies a blur effect */
 }
 
+/* Styling for the card heading */
 .heading {
-  font-size: 20px;
-  text-transform: capitalize;
-  font-weight: 700;
+  font-size: 20px; /* Sets the font size */
+  text-transform: capitalize; /* Capitalizes the text */
+  font-weight: 700; /* Sets the font weight */
 }
 
+/* Styling for paragraphs in the card except the heading */
 .card p:not(.heading) {
-  font-size: 14px;
+  font-size: 14px; /* Sets the font size */
 }
 
+/* Styling for the last paragraph in the card */
 .card p:last-child {
-  color: #e81cff;
-  font-weight: 600;
+  color: #ffffff; /* Sets the text color */
+  font-weight: 600; /* Sets the font weight */
 }
 
+/* Hover effects for the card */
 .card:hover::after {
-  filter: blur(30px);
+  filter: blur(30px); /* Increases the blur on hover */
 }
 
+/* Hover effects for the card's before pseudo-element */
 .card:hover::before {
-  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77); /* Rotates and scales the background */
 }
 
+/* Styling for the Carousel section */
 #Carousel {
-  margin-top: 120px;
+  margin-top: 120px; /* Adds space from the top */
 }
 
+/* Styling for the TxtWrapper */
 .TxtWrapper {
-  display: flex;
-  justify-content: flex-start;
+  display: flex; /* Uses flexbox for layout */
+  justify-content: flex-start; /* Aligns content to the left */
   background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-  border-radius: 25px; /* Rounded corners */
-  border: 1px solid rgba(0, 0, 0, 0.3); /* Subtle border for definition */
-  overflow: hidden;
-  transform: rotate(7deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Black blur shadow */
+  border-radius: 25px; /* Adds rounded corners */
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Adds a subtle border */
+  overflow: hidden; /* Hides overflow content */
+  transform: rotate(7deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg); /* Applies multiple transformations */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Adds a shadow effect */
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px); /* Creates a frosted glass effect */
 }
 
-/* transform: rotate(177deg) translate(13px, 0px) scale(1, 0.6) skew(88deg, -24deg); */
+/* Styling for the heading inside TxtWrapper */
 .TxtWrapper h1 {
-  font-size: 3.3em;
-  text-transform: uppercase;
-  color: white;
-  white-space: nowrap;
-  padding: 0 6rem;
-  letter-spacing: 1px;
-  animation: move-rtl 6000ms linear infinite;
-  transform: rotate(180deg);
+  font-size: 3.3em; /* Sets the font size */
+  text-transform: uppercase; /* Makes the text uppercase */
+  color: white; /* Sets the text color */
+  white-space: nowrap; /* Prevents text from wrapping */
+  padding: 0 6rem; /* Adds padding */
+  letter-spacing: 1px; /* Adds space between letters */
+  animation: move-rtl 6000ms linear infinite; /* Animates the heading */
+  transform: rotate(180deg); /* Rotates the heading */
 }
 
+/* Keyframes for the move-rtl animation */
 @keyframes move-rtl {
   0% {
-    transform: translateX(0);
+    transform: translateX(0); /* Starts the animation */
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-100%); /* Moves the text to the left */
   }
 }
+/* This is the styling for the main projects section */
 #Projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  margin-top: 70px;
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center; /* Center text */
+  padding: 20px; /* Padding inside the section */
+  margin-top: 70px; /* Space from the top */
 }
 
+/* This is the styling for the header inside the projects section */
 #Projects h1 {
-  font-size: 6em;
-  color: white;
+  font-size: 6em; /* Large font size */
+  color: white; /* White text color */
 }
 
+/* This is the styling for the span inside the projects header */
 #Projects h1 span {
-  color: #a315b9;
+  color: #a315b9; /* Purple text color */
 }
 
+/* This is the container for the project gallery */
 #Projects .container {
-  position: relative;
-  /* top: -5%; */
-  width: 100%;
-  height: 100%;
-  perspective: 7000px;
+  position: relative; /* Relative positioning for child elements */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  perspective: 7000px; /* Set 3D perspective */
 }
 
+/* This is the gallery styling */
 #Projects .gallery {
-  position: relative;
-  width: 100%;
-  height: 400px; /* Adjust as needed */
+  position: relative; /* Position relative to the container */
+  width: 100%; /* Full width */
+  height: 400px; /* Adjusted gallery height */
   margin: 0 auto; /* Center the gallery */
-  margin-top: -200px;
-  transform-style: preserve-3d;
-  transform: rotateX(55deg);
-  border-radius: 55px;
+  margin-top: -200px; /* Adjust the position */
+  transform-style: preserve-3d; /* Preserve 3D transformation */
+  transform: rotateX(55deg); /* 3D rotation effect */
+  border-radius: 55px; /* Rounded corners */
 }
 
+/* This is the individual item styling inside the gallery */
 #Projects .item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px; /* Smaller size */
-  height: 50px; /* Smaller size */
-  background: #b0b0b0;
-  margin: 5px;
-  transform-style: preserve-3d;
+  position: absolute; /* Absolute position for stacking */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the item */
+  width: 50px; /* Set smaller width */
+  height: 50px; /* Set smaller height */
+  background: #b0b0b0; /* Gray background */
+  margin: 5px; /* Space between items */
+  transform-style: preserve-3d; /* Preserve 3D transformation */
 }
 
+/* This is the image inside the item */
 #Projects img {
-  width: 100%;
-  height: 100%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
   -o-object-fit: cover;
-     object-fit: cover;
+     object-fit: cover; /* Cover the area without distortion */
 }
 
-/* Updated CSS for glowing border */
+/* This is the preview image container with a glowing border */
 #Projects .preview-img {
-  position: fixed;
-  top: 115%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  height: 250px;
-  overflow: hidden;
-  z-index: 0;
-  border-radius: 25px;
-  /* Adding the glowing effect */
-  border: 2px solid white; /* Solid white border */
-  box-shadow: 0 0 10px white, 0 0 20px pink, 0 0 30px pink; /* Glowing effect */
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 115%; /* Adjusted top position */
+  left: 52%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the preview */
+  width: 350px; /* Set preview width */
+  height: 250px; /* Set preview height */
+  overflow: hidden; /* Hide overflow */
+  z-index: 0; /* Layering */
+  border-radius: 25px; /* Rounded corners */
+  /* Glowing border effect */
+  border: 2px solid white; /* White solid border */
+  box-shadow: 0 0 10px white, 0 0 20px pink, 0 0 30px pink; /* Glowing pink effect */
 }
 
+/* This hides the image container initially */
+.ImageContainer {
+  display: none; /* Hide element */
+}
+
+/* Styling for the team section container */
 #team-section {
-  margin-top: 120px;
-  width: 100%;
-  background: rgba(0, 0, 0, 0);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
+  display: grid; /* Uses grid layout */
+  grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+  grid-template-rows: repeat(4, 1fr); /* Creates 4 equal rows */
+  grid-column-gap: 15px; /* Adds gap between columns */
+  grid-row-gap: 15px; /* Adds gap between rows */
+  margin-left: 5%; /* Moves the section from the left */
+  margin-top: 4%; /* Adds space from the top */
+  height: 80vh; /* Sets the height to 80% of the viewport */
 }
 
+/* Styling for the second TxtWrapper */
 .TxtWrapper2 {
-  margin-top: 40%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
+  margin-top: 38%; /* Moves the element down */
+  width: 100%; /* Sets the width to 100% */
+  display: flex; /* Uses flexbox for layout */
+  justify-content: flex-start; /* Aligns content to the left */
   background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
   border-radius: 25px; /* Rounded corners */
   border: 1px solid rgba(0, 0, 0, 0.3); /* Subtle border for definition */
-  overflow: hidden;
-  transform: rotate(7deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg);
+  overflow: hidden; /* Hides overflow content */
+  transform: rotate(7deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg); /* Applies multiple transformations */
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Black blur shadow */
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px); /* Creates a frosted glass effect */
 }
 
-/* transform: rotate(177deg) translate(13px, 0px) scale(1, 0.6) skew(88deg, -24deg); */
+/* Styling for the heading inside TxtWrapper2 */
 .TxtWrapper2 h1 {
-  font-size: 4em;
-  text-transform: uppercase;
-  color: white;
-  white-space: nowrap;
-  padding: 0 6rem;
-  letter-spacing: 1px;
-  animation: moveRtl 6000ms linear infinite;
-  transform: rotate(180deg);
+  font-size: 4em; /* Sets the font size */
+  text-transform: uppercase; /* Makes the text uppercase */
+  color: white; /* Sets the text color */
+  white-space: nowrap; /* Prevents text from wrapping */
+  padding: 0 6rem; /* Adds padding */
+  letter-spacing: 1px; /* Adds space between letters */
+  animation: moveRtl 6000ms linear infinite; /* Animates the heading */
+  transform: rotate(180deg); /* Rotates the heading */
 }
 
+/* Keyframes for the moveRtl animation */
 @keyframes moveRtl {
   0% {
-    transform: translateX(0);
+    transform: translateX(0); /* Starts the animation */
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-100%); /* Moves the text to the left */
   }
 }
-#team-section .team-item {
-  font-family: "Mak";
-  font-size: 220px;
-  transition: all 300ms ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-  flex: 1;
+/* Styling for the team cards inside the section */
+#team-section .card {
+  padding: 20px; /* Adds padding inside the card */
+  width: 210px; /* Sets the width of the card */
+  height: 310px; /* Sets the height of the card */
+  border-radius: 20px; /* Rounds the corners */
+  background: #000000; /* Sets the background color */
+  box-shadow: 5px 5px 8px #1b1b1b, -5px -5px 8px #272727; /* Adds shadow to the top-left */
+  transition: 0.4s; /* Smooth transition on hover */
 }
 
-#team-section .team-item:hover {
-  flex-grow: 2;
-  font-size: 400px;
+/* Hover effects for the cards */
+#team-section .card:hover {
+  translate: 0 -10px; /* Moves the card up on hover */
 }
 
-#team-section h3 {
-  font-size: 0.4em;
-  color: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Styling for the card title */
+#team-section .card-title {
+  font-size: 18px; /* Sets the font size */
+  font-weight: 600; /* Sets the font weight */
+  color: #b2eccf; /* Sets the text color */
+  margin: 15px 0 0 10px; /* Adds margin around the title */
 }
 
-.TeamCard {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  height: 350px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Styling for the card image container */
+#team-section .card-image {
+  min-height: 160px; /* Sets the minimum height */
+  background-color: #313131; /* Sets the background color */
+  border-radius: 15px; /* Rounds the corners */
+  background: rgba(0, 0, 0, 0); /* Sets transparent background */
 }
 
-#team-section .team-item:nth-child(8):hover .TeamCard {
-  transform: translateX(-350%) translateY(0);
+/* Styling for the image inside the card */
+#team-section .card-image img {
+  width: 100%; /* Makes the image fill the container */
+  margin-top: 1%; /* Adds space from the top */
+  border-radius: 25px; /* Rounds the corners of the image */
 }
 
-.TeamCard img {
-  width: 100%;
-  height: 325px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 10px;
+/* Styling for the card body */
+#team-section .card-body {
+  margin: 13px 0 0 10px; /* Adds margin around the body */
+  color: rgb(184, 184, 184); /* Sets the text color */
+  font-size: 15px; /* Sets the font size */
 }
 
-.TeamCard .description {
-  font-size: 14px;
-  color: #000;
-  text-align: left;
-}
-
-.team-item:hover .TeamCard {
-  opacity: 1;
-}
-
-#team-section .team-item:nth-child(8):hover .TeamCard {
-  transform: translate(-200px, 0) !important;
-  opacity: 1;
-}
-
+/* This is the styling for the Reviews section */
 #Reviews {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  margin-top: 200px;
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  justify-content: center; /* Center elements vertically */
+  text-align: center; /* Center text */
+  padding: 20px; /* Padding inside the section */
+  margin-top: 200px; /* Space from the top */
 }
 
+/* This is the styling for the Reviews section header */
 #Reviews h1 {
-  font-size: 4.7em;
-  color: white;
+  font-size: 4.7em; /* Large font size */
+  color: white; /* White text color */
 }
 
+/* This is the styling for the span inside the Reviews header */
 #Reviews span {
-  color: #820ea2;
+  color: #820ea2; /* Purple text color */
 }
 
+/* This is the container for the review cards */
 .ReviewsCards {
-  width: 100%;
-  /* height: 200vh; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
+  width: 100%; /* Full width */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center cards horizontally */
+  align-items: center; /* Center cards vertically */
+  margin-top: 5%; /* Space from the top */
 }
 
+/* This is the styling for each individual review card */
 .review-card {
-  position: relative;
-  font-family: sans-serif;
-  width: 220px;
-  height: 220px;
-  background: #000000;
-  padding: 30px;
-  border-radius: 50%;
-  box-shadow: 0 0 22px rgba(180, 2, 147, 0.4);
-  transition: 0.6s;
-  margin: 0 25px;
+  position: relative; /* Position relative for child elements */
+  width: 220px; /* Set card width */
+  height: 220px; /* Set card height */
+  background: #000000; /* Black background */
+  padding: 30px; /* Padding inside the card */
+  border-radius: 50%; /* Circular shape */
+  box-shadow: 0 0 22px rgba(180, 2, 147, 0.4); /* Box shadow */
+  transition: 0.6s; /* Smooth transition */
+  margin: 0 25px; /* Space between cards */
 }
 
+/* This adds a hover effect for the review card */
 .review-card:hover {
-  border-radius: 10px;
-  height: 260px;
+  border-radius: 10px; /* Rounded corners on hover */
+  height: 260px; /* Increase height on hover */
 }
 
+/* This is the styling for the image container inside each card */
 .review-card .img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: 0.6s;
-  z-index: 99;
+  position: relative; /* Position relative for child elements */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  transition: 0.6s; /* Smooth transition */
+  z-index: 99; /* Layering */
 }
 
+/* This is the hover effect for the image inside the card */
 .review-card:hover .img {
-  transform: translateY(-40px);
+  transform: translateY(-40px); /* Move image up on hover */
 }
 
+/* This is the styling for the image inside the review card */
 .img img {
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 22px rgba(51, 51, 51, 0.4);
-  transition: 0.6s;
+  width: 100%; /* Full width */
+  border-radius: 50%; /* Circular shape */
+  box-shadow: 0 0 22px rgba(51, 51, 51, 0.4); /* Box shadow */
+  transition: 0.6s; /* Smooth transition */
 }
 
+/* This is the hover effect for the image inside the review card */
 .review-card:hover img {
-  border-radius: 10px;
+  border-radius: 10px; /* Rounded corners on hover */
 }
 
+/* This is the caption styling inside the review card */
 .caption {
-  text-align: center;
-  transform: translateY(-80px);
-  opacity: 0;
-  transition: 0.6s;
+  text-align: center; /* Center text */
+  transform: translateY(-80px); /* Move caption up */
+  opacity: 0; /* Initially hidden */
+  transition: 0.6s; /* Smooth transition */
 }
 
+/* This makes the caption visible on hover */
 .review-card:hover .caption {
-  opacity: 1;
+  opacity: 1; /* Show caption */
 }
 
+/* This is the styling for the caption's header inside the review card */
 .caption h3 {
-  font-size: 21px;
-  font-family: sans-serif;
+  font-size: 21px; /* Set font size */
+  color: #ffffff; /* White text color */
 }
 
+/* This is the styling for the caption's paragraph inside the review card */
 .caption p {
-  font-size: 15px;
-  color: #ffffff;
-  font-family: sans-serif;
-  margin: -10px 0 9px 0;
+  font-size: 15px; /* Set font size */
+  color: #ffffff; /* White text color */
+  margin: -10px 0 9px 0; /* Adjust margins */
 }
 
+/* This is the container styling for the FAQ section */
 #FAQ {
   margin-top: 15%;
 }
 
-/* FAQ container styling */
+/* This is the general container for all FAQ items */
 .faq-container {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 50px auto; /* Centers the container */
   padding: 20px;
-  background-color: #000000; /* Slightly lighter black */
+  background-color: #000000; /* Black background */
   border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(255, 20, 147, 0.2); /* Pink glow */
-  align-items: center;
+  box-shadow: 0 4px 8px rgba(255, 20, 147, 0.2); /* Soft pinkish shadow */
 }
 
-/* Main title */
+/* This is the styling for the main FAQ title */
 #FAQ h1 {
   text-align: center;
   margin-top: -5%;
-  font-size: 5em;
-  color: #ffffff; /* Pink color for the title */
+  font-size: 5em; /* Large font size */
+  color: #ffffff; /* White text color */
 }
 
 #FAQ h1 span {
-  color: #a315b9;
+  color: #a315b9; /* Highlighted text color */
 }
 
-/* FAQ item styling */
+/* This is the styling for individual FAQ items */
 .faq-item {
-  border-bottom: 1px solid #000000; /* Dark border */
+  border-bottom: 1px solid #000000; /* Black divider */
+  margin-bottom: 10px;
   overflow: hidden;
 }
 
-/* Question button styling */
+/* This is the styling for the question button in each FAQ item */
 .faq-question {
-  background-color: #000000; /* Darker gray background */
+  background-color: #000000; /* Black background */
   color: #fff; /* White text */
-  width: 100%;
   padding: 15px 20px;
-  text-align: left;
   font-size: 18px;
-  border: none;
-  outline: none;
-  cursor: pointer;
   border-radius: 8px; /* Rounded corners */
-  margin-bottom: 8px; /* Spacing between items */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s ease;
-  border: 1px solid white;
+  list-style: none; /* No bullet points */
+  border: 1px solid white; /* White border */
+  display: block; /* Makes the button block-level */
 }
 
-/* Hover effect */
 .faq-question:hover {
-  background-color: #333; /* Slightly lighter gray */
+  background-color: #333; /* Slightly lighter on hover */
 }
 
-/* Arrow icon styling */
-.faq-question .arrow {
-  width: 12px;
-  height: 12px;
-  border: solid #ffffff; /* Pink arrow */
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
-  background: white;
-}
-
-/* Rotate arrow for active state */
-.faq-question.active .arrow {
-  transform: rotate(-135deg); /* Rotate arrow upward */
-}
-
-/* Answer section styling */
+/* This is the styling for the answer section in each FAQ item */
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background-color: #111;
-  border-radius: 8px;
-}
-
-/* Answer text styling */
-.faq-answer p {
+  background-color: #111; /* Darker background for answers */
+  border-radius: 8px; /* Rounded corners */
+  margin-top: 10px;
   padding: 15px 20px;
   font-size: 16px;
-  color: #ffccff; /* Light pink text for answers */
+  color: #ffccff; /* Light pink text */
 }
 
+/* This is the styling for an open FAQ question */
+details[open] .faq-question {
+  background-color: #333; /* Darker background when open */
+}
+
+/* This is the container for the pricing carousel */
 .Pricing-carousel-container {
-  /* height: 28em; */
-  /* margin: 0 auto; */
-  /* position: relative; */
-  /* width: 30em; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 5%;
+  display: flex; /* Arrange items in a flexible layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: space-between; /* Space out the items evenly */
+  align-items: center; /* Center items horizontally */
+  margin-top: 5%; /* Space from the top */
 }
 
+/* This is the heading styling inside the pricing carousel container */
 .Pricing-carousel-container h1 {
-  font-size: 5em;
-  color: white;
+  font-size: 5em; /* Large font size */
+  color: white; /* White text color */
 }
 
+/* This is the span inside the pricing carousel heading */
 .Pricing-carousel-container h1 span {
-  color: #a315b9;
+  color: #a315b9; /* Purple text color */
 }
 
+/* This is the styling for the pricing image */
 .Pricing-carousel-container .PricingImg img {
-  width: 550px;
-  margin-top: -80px;
-  height: auto;
-  /* object-fit: cover;  */
+  width: 550px; /* Set width */
+  margin-top: -80px; /* Adjust vertical position */
+  height: auto; /* Maintain aspect ratio */
 }
 
+/* This is the container for the pricing carousel */
 .Pricing-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: relative;
-  width: 100%;
+  display: flex; /* Align items in a flexible layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  height: 100%; /* Full height */
+  position: relative; /* Allows positioning of child elements */
+  width: 100%; /* Full width */
 }
 
+/* This is the slider container */
 .slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+  display: flex; /* Arrange items in a row */
+  transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
 }
 
+/* This is the card inside the pricing carousel */
 .Pricing-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 14rem;
-  padding: 1rem;
-  background-color: rgb(122, 48, 143);
+  display: flex; /* Arrange content vertically */
+  flex-direction: column; /* Stack content */
+  align-items: center; /* Center content horizontally */
+  justify-content: space-between; /* Space out content */
+  width: 14rem; /* Set card width */
+  padding: 1rem; /* Padding inside the card */
+  background-color: rgb(122, 48, 143); /* Card background color */
   background-image: radial-gradient(circle at 0% 0%, rgb(37, 7, 44) 15%, rgba(0, 0, 0, 0) 75%), radial-gradient(circle at 100% 100%, rgba(25, 2, 31, 0.9) 15%, rgba(0, 0, 0, 0) 150%), linear-gradient(135deg, rgba(24, 8, 28, 0) 0%, rgb(122, 48, 143) 50%, rgba(24, 8, 28, 0) 100%);
-  border-radius: 0.5rem;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0.6;
+  border-radius: 0.5rem; /* Rounded corners */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+  opacity: 0.6; /* Initial opacity */
 }
 
+/* This is the active state of the pricing card */
 .Pricing-card.Pricing-active {
-  transform: scale(1.1);
-  opacity: 1;
-  z-index: 2;
+  transform: scale(1.1); /* Slightly enlarge the active card */
+  opacity: 1; /* Set opacity to full */
+  z-index: 2; /* Bring to the front */
 }
 
+/* This is the title of the pricing card */
 .Pricing-card .Pricing-title {
-  font-size: 1.25rem;
-  color: white;
-  font-weight: 600;
+  font-size: 1.25rem; /* Set title size */
+  color: white; /* White text color */
+  font-weight: 600; /* Semi-bold font */
 }
 
+/* This is the pricing amount inside the card */
 .Pricing-card .pricing {
-  font-size: 1.5rem;
-  color: white;
-  font-weight: 600;
+  font-size: 1.5rem; /* Set font size */
+  color: white; /* White text color */
+  font-weight: 600; /* Semi-bold font */
 }
 
+/* This is the pricing time and sub-title */
 .Pricing-card .pricing-time,
 .Pricing-card .sub-title {
-  font-size: 0.75rem;
-  color: rgb(184, 132, 199);
-  font-weight: 500;
+  font-size: 0.75rem; /* Smaller text size */
+  color: rgb(184, 132, 199); /* Light purple color */
+  font-weight: 500; /* Medium font weight */
 }
 
+/* This is the list inside the pricing card */
 .Pricing-card .Pricing-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0;
-  font-size: 0.875rem;
-  color: white;
-  font-weight: 500;
+  list-style: none; /* Remove list bullets */
+  padding: 0; /* Remove padding */
+  margin: 0.5rem 0; /* Vertical margin */
+  font-size: 0.875rem; /* Smaller font size */
+  color: white; /* White text color */
+  font-weight: 500; /* Medium font weight */
 }
 
+/* This is the button inside the pricing card */
 .Pricing-card .Pricing-button {
-  cursor: pointer;
-  padding: 0.5rem 0.75rem;
-  background-color: rgb(199, 95, 228);
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  transition: box-shadow 0.3s ease-in-out;
+  padding: 0.5rem 0.75rem; /* Button padding */
+  background-color: rgb(199, 95, 228); /* Button background color */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 0.5rem; /* Rounded corners */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth shadow effect */
 }
 
+/* This is the hover effect on the button */
 .Pricing-card .Pricing-button:hover {
-  box-shadow: 0px 0px 20px 0 rgb(199, 95, 228);
+  box-shadow: 0px 0px 20px 0 rgb(199, 95, 228); /* Add glow effect */
 }
 
+/* This is the controls container for the carousel */
 .controls {
-  position: absolute;
-  top: 50%;
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
+  position: absolute; /* Position absolutely relative to the carousel */
+  top: 50%; /* Vertical center */
+  width: 80%; /* Set width */
+  display: flex; /* Flex layout */
+  justify-content: space-between; /* Space out controls */
+  transform: translateY(-50%); /* Adjust for centering */
 }
 
+/* This is the button inside the controls */
 .control-button {
-  cursor: pointer;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
+  font-size: 2rem; /* Large font size */
+  color: white; /* White text color */
+  background: none; /* No background */
+  border: none; /* No border */
 }
 
+/* This is the hover effect for control buttons */
 .control-button:hover {
-  color: rgb(199, 95, 228);
+  color: rgb(199, 95, 228); /* Change color on hover */
 }
 
+/* Styles for the main Contact section, setting up layout and spacing */
 #Contact {
   display: flex;
-  /* flex-direction: row; */
   align-items: center;
-  /* justify-content: space-between; */
-  /* text-align: center; */
-  /* gap: 40px; */
   margin-top: 230px;
 }
 
+/* Additional styles for the Contact text wrapper */
 #Contact .ContactTxtWrap {
   margin-left: -400px;
   margin-top: 60px;
 }
-#Contact .line {
+
+/* Styling for the horizontal line in the Contact section */
+.line {
   width: 80vw;
 }
-#Contact .left, #Contact .right {
+
+/* General layout styles for left and right sections */
+.left, .right {
   width: 80vw;
   overflow: hidden;
   display: inline-block;
 }
-#Contact .left {
+
+/* Specific styles for the left section */
+.left {
   color: rgb(124, 16, 126);
   transform: skew(0deg, -15deg);
 }
-#Contact .right {
+
+/* Specific styles for the right section */
+.right {
   color: rgb(255, 255, 255);
-  transform: skew(0deg, 15deg) translate(40px, -90px); /* Moves 75px up and 50px to the right */
+  transform: skew(0deg, 15deg) translate(40px, -90px);
 }
-#Contact .left .content {
+
+/* Centering content within the left section */
+.left .content {
   width: 90vw;
   text-align: center;
 }
-#Contact .right .content {
+
+/* Centering content within the right section */
+.right .content {
   width: 90vw;
   text-align: center;
   transform: none;
 }
-#Contact .ContactTxtWrap .line .content span {
+
+/* Styling for text elements within Contact section */
+.ContactTxtWrap .line .content span {
   display: inline-block;
   font-family: "Agbalumo", serif;
   font-style: normal;
@@ -1223,6 +1262,7 @@ span.word:hover {
   transition: ease-out 0.6s;
 }
 
+/* Styling for the form container, including gradients and layout */
 .form-container {
   width: 500px;
   background: linear-gradient(#000000, #000000) padding-box, linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
@@ -1236,25 +1276,28 @@ span.word:hover {
   gap: 20px;
   box-sizing: border-box;
   border-radius: 16px;
-  /* margin-right: 100px; */
 }
 
+/* Scale effect for active state of buttons in the form */
 .form-container button:active {
   scale: 0.95;
 }
 
+/* Layout for the form inside the form container */
 .form-container .form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+/* Layout for individual form groups */
 .form-container .form-group {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
+/* Styling for form group labels */
 .form-container .form-group label {
   display: block;
   margin-bottom: 5px;
@@ -1263,6 +1306,7 @@ span.word:hover {
   font-size: 12px;
 }
 
+/* Styling for text inputs in the form group */
 .form-container .form-group input {
   width: 95%;
   padding: 12px 16px;
@@ -1273,6 +1317,7 @@ span.word:hover {
   border: 1px solid #ffffff;
 }
 
+/* Styling for textareas in the form group */
 .form-container .form-group textarea {
   width: 95%;
   padding: 12px 16px;
@@ -1285,24 +1330,27 @@ span.word:hover {
   font-family: inherit;
 }
 
+/* Placeholder styling for inputs */
 .form-container .form-group input::-moz-placeholder {
   opacity: 0.5;
 }
-
 .form-container .form-group input::placeholder {
   opacity: 0.5;
 }
 
+/* Focus effect for text inputs */
 .form-container .form-group input:focus {
   outline: none;
   border-color: #e81cff;
 }
 
+/* Focus effect for textareas */
 .form-container .form-group textarea:focus {
   outline: none;
   border-color: #e81cff;
 }
 
+/* Styling for the submit button in the form */
 .form-container .form-submit-btn {
   display: flex;
   align-items: flex-start;
@@ -1318,91 +1366,100 @@ span.word:hover {
   font-size: inherit;
   gap: 8px;
   margin-top: 8px;
-  cursor: pointer;
   border-radius: 6px;
 }
 
+/* Hover effect for the submit button */
 .form-container .form-submit-btn:hover {
   background-color: #fff;
   border-color: #fff;
 }
 
+/* This is the main footer styling */
 .footer {
   background-color: #000000;
   color: #fff;
   padding: 40px 20px;
-  text-align: center;
-  margin-top: 150px;
+  text-align: center; /* Centers text within the footer */
+  margin-top: 150px; /* Adds spacing from the content above */
   border-top: 2px solid transparent;
-  background-image: linear-gradient(145deg, #fc76ef, #40c9ff);
+  background-image: linear-gradient(145deg, #fc76ef, #40c9ff); /* Adds a gradient effect */
   background-clip: padding-box;
   -webkit-background-clip: text;
-  box-shadow: 0 0 15px #ec68de, 0 0 30px #6dc2f7;
-  border-bottom: solid 1px black;
+  box-shadow: 0 0 15px #ec68de, 0 0 30px #6dc2f7; /* Glowing effect */
+  border-bottom: solid 1px black; /* Bottom border for definition */
 }
 
+/* This is the container for footer content */
 .footerContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows wrapping of items */
   justify-content: space-between;
   max-width: 1200px;
-  margin: auto;
+  margin: auto; /* Centers the container */
 }
 
+/* This is the styling for individual footer columns */
 .footerColumn {
   flex: 1;
   min-width: 200px;
-  margin: 10px;
+  margin: 10px; /* Adds spacing between columns */
 }
 
+/* This is the title styling for footer columns */
 .footerColumn h3 {
-  color: #9b59b6;
+  color: #9b59b6; /* Purple color for headings */
   margin-bottom: 15px;
 }
 
+/* This is the link styling within footer columns */
 .footerColumn a {
   display: block;
   color: #fff;
-  text-decoration: none;
+  text-decoration: none; /* Removes underline from links */
   margin-bottom: 10px;
-  transition: color 0.3s;
+  transition: color 0.3s; /* Smooth hover effect */
 }
 
 .footerColumn a:hover {
-  color: #9b59b6;
+  color: #9b59b6; /* Purple color on hover */
 }
 
+/* This is the styling for the footer logo */
 .footerLogo img {
   max-width: 500px;
   margin-top: -120px;
   margin-left: -120px;
 }
 
+/* This is the text styling under the footer logo */
 .footerLogo p {
   margin-top: -80px;
   margin-left: -15px;
   font-size: 14px;
 }
 
+/* This is the layout for social media icons */
 .socialIcons {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: repeat(2, 1fr); /* Two rows */
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
 
+/* This is the styling for social media links */
 .socialIcons a {
-  /* margin-right: 50px; */
   color: #fff;
   font-size: 20px;
   transition: color 0.3s;
 }
 
 .socialIcons a:hover {
-  color: #9b59b6;
+  color: #9b59b6; /* Purple color on hover */
 }
 
+/* This is the styling for the footer address section */
 .footerAddress {
   display: flex;
   flex-direction: column;
@@ -1417,9 +1474,10 @@ span.word:hover {
 
 .footerAddress div i {
   margin-right: 10px;
-  color: #9b59b6;
+  color: #9b59b6; /* Purple icon color */
 }
 
+/* This is the styling for the copyright section */
 .footerCopyright {
   margin-top: 20px;
   border-top: 1px solid #000000;
@@ -1427,59 +1485,953 @@ span.word:hover {
   font-size: 14px;
 }
 
+/* This is the responsive styling for smaller screens */
 @media (max-width: 768px) {
   .footerContainer {
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centers content on smaller screens */
   }
   .footerColumn {
-    text-align: center;
+    text-align: center; /* Centers text within columns */
   }
   .footerAddress div {
-    justify-content: center;
+    justify-content: center; /* Centers address content */
   }
 }
+/* This is the styling for the ocean wave effect */
 .ocean {
   position: relative;
   height: 150px;
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; /* Ensures waves don't overflow the container */
   background: #000000;
 }
 
+/* This is the styling for wave layers */
 .wave2 {
   position: absolute;
   bottom: 0;
-  width: 200%;
+  width: 200%; /* Extends wave width for smooth animation */
   height: 150px;
   background-repeat: repeat-x;
   background-size: contain;
   background-image: url(./Resources/Wave\ \(2\).png);
 }
 
+/* This is the first wave layer with specific properties */
 .wave2:nth-child(1) {
-  animation: waveMove 6s linear infinite;
-  opacity: 0.6;
-  z-index: 3;
+  animation: waveMove 6s linear infinite; /* Fastest animation */
+  opacity: 0.6; /* Semi-transparent */
+  z-index: 3; /* Foreground wave */
 }
 
+/* This is the second wave layer */
 .wave2:nth-child(2) {
-  animation: waveMove 9s linear infinite;
-  opacity: 0.4;
+  animation: waveMove 9s linear infinite; /* Medium-speed animation */
+  opacity: 0.4; /* More transparent */
   z-index: 2;
 }
 
+/* This is the third wave layer */
 .wave2:nth-child(3) {
-  animation: waveMove 12s linear infinite;
-  opacity: 0.2;
-  z-index: 1;
+  animation: waveMove 12s linear infinite; /* Slowest animation */
+  opacity: 0.2; /* Most transparent */
+  z-index: 1; /* Background wave */
 }
 
+/* This is the keyframes for wave movement */
 @keyframes waveMove {
   0% {
-    transform: translateX(0);
+    transform: translateX(0); /* Start position */
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Moves wave to the left */
+  }
+}
+@media (min-width: 360px) and (max-width: 720px) {
+  /* Styles for mobile devices */
+  body {
+    max-width: 720px;
+  }
+  /* Loader */
+  .marquee {
+    margin-top: -40px;
+  }
+  .loader-clip-center .marquee,
+  .loader-clip-top .marquee,
+  .loader-clip-bottom .marquee {
+    font-size: 10em;
+  }
+  span .copymark {
+    font-size: 0.2em;
+  }
+  /* Main */
+  .main {
+    max-width: 720px;
+    top: -40px;
+  }
+  /* Header */
+  .logo {
+    position: relative;
+    left: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo img {
+    height: 150px;
+  }
+  .logo h3 {
+    margin: -10px 0 0 115px;
+  }
+  .navList ul {
+    display: none;
+  }
+  .logo svg {
+    max-width: 200px;
+    height: 45px;
+  }
+  /* Intro */
+  .Intro .partOne p {
+    margin-left: 20%;
+    max-width: 270px;
+  }
+  .Intro .partTwo {
+    gap: 35px;
+  }
+  /* About Us */
+  #AboutUs .Abouttxt h1 {
+    text-decoration-style: double;
+    font-size: 1.8em;
+  }
+  #AboutUs .Abouttxt {
+    font-size: 1em;
+    margin-left: 0;
+  }
+  #AboutUs .Abouttxt p {
+    width: 260px;
+    font-size: 1em;
+  }
+  #AboutUs .Spline {
+    width: 250px;
+  }
+  /* Services */
+  #Services {
+    margin-top: -15%;
+  }
+  #Carousel {
+    margin-top: 10%;
+  }
+  .TxtWrapper h1 {
+    font-size: 2.6em;
+  }
+  /* Projects */
+  #Projects {
+    padding: 10px;
+    margin-top: 20px;
+  }
+  #Projects h1 {
+    font-size: 3em;
+  }
+  #Projects .container,
+  #Projects .preview-img {
+    display: none !important;
+  }
+  #Projects .ImageContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-gap: 10px;
+  }
+  #Projects .ImageContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    border: 2px solid #d980ba;
+  }
+  /* Team */
+  #team-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+  #team-section .card {
+    width: 100%;
+    max-width: 200px;
+    height: 240px;
+    padding: 0;
+  }
+  #team-section .card-title {
+    font-size: 10px;
+    margin: -10px 0 0 10px;
+  }
+  #team-section .card-body {
+    font-size: 10px;
+    margin: 5px 0 0 10px;
+  }
+  #team-section .card-image img {
+    width: 100%;
+    height: auto;
+  }
+  .TxtWrapper2 {
+    margin-top: 5%;
+  }
+  /* Reviews */
+  #Reviews {
+    margin-top: 380px;
+  }
+  #Reviews h1 {
+    font-size: 2.5em;
+  }
+  .ReviewsCards {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    gap: 40px;
+  }
+  .review-card {
+    width: 100%;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .review-card .img {
+    width: 280px;
+    height: 150px;
+    top: 60px;
+  }
+  .review-card:hover {
+    border-radius: 10px;
+    height: 340px;
+  }
+  .review-card .img:hover {
+    transform: translateY(-70px);
+  }
+  .caption h3 {
+    font-size: 15px;
+  }
+  .caption p {
+    font-size: 15px;
+    margin: 165px 0 9px 0;
+  }
+  /* FAQ */
+  #FAQ h1 {
+    font-size: 3em;
+  }
+  .faq-container {
+    max-width: 250px;
+    margin: 50px auto;
+    padding: 15px;
+  }
+  /* Prices */
+  .Pricing-carousel-container h1 {
+    font-size: 2em;
+    display: flex;
+    width: 200px;
+  }
+  .Pricing-carousel-container .PricingImg img {
+    width: 100%;
+    max-width: 220px;
+    margin-top: -30px;
+    height: auto;
+  }
+  .slider {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Pricing-card {
+    width: 100%;
+    max-width: 9rem;
+    padding: 1rem;
+  }
+  .controls {
+    width: 70%;
+  }
+  .control-button {
+    transform: rotate(270deg);
+  }
+  /* Contact */
+  #Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0 0 240px;
+  }
+  .line {
+    width: 50vw;
+  }
+  .left,
+  .right {
+    width: 50vw;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .left .content {
+    width: 80vw;
+    text-align: center;
+  }
+  .right .content {
+    width: 70vw;
+    text-align: center;
+  }
+  .ContactTxtWrap .line .content span {
+    font-size: 2em;
+  }
+  .form-container {
+    width: 100%;
+    max-width: 250px;
+    margin-left: -90%;
+  }
+  .form-container .form {
+    padding-right: 20px;
+  }
+  /* Footer */
+  .footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footerLogo img {
+    max-width: 100%;
+    margin-left: 0.5%;
+  }
+  .footerCopyright {
+    font-size: 10px;
+  }
+  /* Responsive Adjustments */
+}
+@media (min-width: 721px) and (max-width: 1024px) {
+  /* Loader */
+  .loader {
+    height: 100vh;
+  }
+  .marquee {
+    font-size: 6vw;
+  }
+  .loader-clip-top .marquee,
+  .loader-clip-bottom .marquee {
+    font-size: 10em;
+    margin-top: -30px;
+  }
+  .loader-clip-center .marquee {
+    font-size: 10em;
+    margin-top: -20px;
+  }
+  .main {
+    max-width: 1024px;
+    left: 0%;
+  }
+  .navPart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  /* Header */
+  .logo {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo img {
+    height: 190px;
+  }
+  .logo h3 {
+    margin: -10px 0 0 40px;
+  }
+  .navList ul {
+    display: flex;
+    flex-direction: row;
+    margin-top: -5%;
+  }
+  .navList li {
+    font-size: 1.3em;
+    position: relative;
+  }
+  .logo svg {
+    max-width: 200px;
+    height: 45px;
+  }
+  /* Intro */
+  .Intro .partOne p {
+    max-width: 500px;
+  }
+  .Intro .partTwo {
+    gap: 35px;
+  }
+  /* About Us */
+  #AboutUs .Abouttxt h1 {
+    text-decoration-style: double;
+    font-size: 3em;
+  }
+  #AboutUs .Abouttxt {
+    font-size: 1em;
+    margin-left: 0;
+  }
+  #AboutUs .Abouttxt p {
+    width: 550px;
+    font-size: 1.6em;
+  }
+  #AboutUs .Spline {
+    width: 250px;
+  }
+  /* Services */
+  #Services {
+    margin-top: -15%;
+  }
+  #Carousel {
+    margin-top: 10%;
+  }
+  .TxtWrapper h1 {
+    font-size: 2.6em;
+  }
+  /* Projects */
+  #Projects {
+    padding: 10px;
+    margin-top: 20px;
+  }
+  #Projects h1 {
+    font-size: 3em;
+  }
+  #Projects .container,
+  #Projects .preview-img {
+    display: none !important;
+  }
+  #Projects .ImageContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 7px;
+    grid-row-gap: 10px;
+  }
+  #Projects .ImageContainer img {
+    width: 90%;
+    max-height: 300px;
+    border-radius: 25px;
+    border: 2px solid #d980ba;
+  }
+  /* Team */
+  #team-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+  #team-section .card {
+    width: 100%;
+    max-width: 250px;
+    max-height: 350px;
+    padding: 0;
+  }
+  #team-section .card-title {
+    font-size: 10px;
+    margin: 10px 0 0 10px;
+  }
+  #team-section .card-body {
+    font-size: 10px;
+    margin: 10px 0 0 10px;
+  }
+  #team-section .card-image img {
+    width: 100%;
+    height: auto;
+  }
+  .TxtWrapper2 {
+    margin-top: 5%;
+  }
+  /* Reviews */
+  #Reviews {
+    margin-top: 100%;
+  }
+  #Reviews h1 {
+    font-size: 3.5em;
+    width: 300px;
+  }
+  .ReviewsCards {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    gap: 40px;
+  }
+  .review-card {
+    width: 100%;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .review-card .img {
+    width: 280px;
+    height: 150px;
+    top: 60px;
+  }
+  .review-card:hover {
+    border-radius: 10px;
+    height: 340px;
+  }
+  .review-card .img:hover {
+    transform: translateY(-70px);
+  }
+  .caption h3 {
+    font-size: 15px;
+  }
+  .caption p {
+    font-size: 15px;
+    margin: 195px 0 9px 0;
+  }
+  /* FAQ */
+  #FAQ {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #FAQ h1 {
+    text-align: center;
+    font-size: 3em;
+    width: 300px;
+  }
+  .faq-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 15px;
+  }
+  /* Prices */
+  .Pricing-carousel-container {
+    margin-top: -4%;
+  }
+  .Pricing-carousel-container h1 {
+    font-size: 4em;
+    display: flex;
+    width: 300px;
+  }
+  .Pricing-carousel-container .PricingImg img {
+    width: 100%;
+    max-width: 350px;
+    margin-top: -30px;
+    height: auto;
+  }
+  .slider {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Pricing-card {
+    width: 100%;
+    max-width: 14rem;
+    padding: 1rem;
+  }
+  .controls {
+    width: 70%;
+  }
+  .control-button {
+    transform: rotate(270deg);
+  }
+  /* Contact */
+  #Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0 0 240px;
+  }
+  .line {
+    width: 50vw;
+  }
+  .left,
+  .right {
+    width: 50vw;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .left .content {
+    width: 80vw;
+    text-align: center;
+  }
+  .right .content {
+    width: 70vw;
+    text-align: center;
+  }
+  .ContactTxtWrap .line .content span {
+    font-size: 2em;
+  }
+  .form-container {
+    width: 100%;
+    max-width: 500px;
+    margin-left: -60%;
+  }
+  .form-container .form {
+    padding-right: 20px;
+  }
+  /* Footer */
+  .footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footerLogo img {
+    max-width: 100%;
+    margin-left: 0.5%;
+  }
+  .footerCopyright {
+    font-size: 10px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1199px) {
+  /* Loader */
+  .loader {
+    height: 100vh;
+  }
+  .marquee {
+    font-size: 4vw;
+  }
+  .loader-clip-top .marquee,
+  .loader-clip-bottom .marquee {
+    font-size: 8em;
+    margin-top: -25px;
+  }
+  .loader-clip-center .marquee {
+    font-size: 8em;
+    margin-top: -15px;
+  }
+  .main {
+    max-width: 90%;
+    left: 1%;
+  }
+  .navPart {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+  /* Header */
+  .logo {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: -4%;
+  }
+  .logo img {
+    height: 120px;
+  }
+  .logo h3 {
+    margin: -10px 0 0 -30px;
+  }
+  .navList ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: -8%;
+  }
+  .navList li {
+    font-size: 1em;
+    position: relative;
+  }
+  .button {
+    top: -5px;
+  }
+  .logo svg {
+    max-width: 180px;
+    height: 40px;
+  }
+  /* Intro */
+  .Intro {
+    height: 90vh; /* Set the height of the intro section */
+  }
+  .Intro .partOne {
+    margin-top: 3%;
+  }
+  .Intro .partOne p {
+    max-width: 450px;
+  }
+  .Intro .partTwo {
+    gap: 30px;
+  }
+  /* About Us */
+  #AboutUs .Abouttxt h1 {
+    text-decoration-style: double;
+    font-size: 2.8em;
+  }
+  #AboutUs .Abouttxt {
+    font-size: 1.1em;
+    margin-left: 0;
+  }
+  #AboutUs .Abouttxt p {
+    width: 750px;
+    font-size: 1.5em;
+  }
+  #AboutUs .Spline {
+    width: 230px;
+  }
+  /* Services */
+  #Services {
+    margin-top: -10%;
+  }
+  #Carousel {
+    margin-top: 8%;
+  }
+  .TxtWrapper h1 {
+    font-size: 2.4em;
+  }
+  /* Projects */
+  #Projects {
+    padding: 10px;
+    margin-top: 15px;
+  }
+  #Projects h1 {
+    font-size: 4em;
+  }
+  #Projects .container,
+  #Projects .preview-img {
+    display: none !important;
+  }
+  #Projects .ImageContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 8px;
+    margin-left: 5%;
+  }
+  #Projects .ImageContainer img {
+    width: 85%;
+    max-height: 280px;
+    border-radius: 20px;
+    border: 2px solid #d980ba;
+  }
+  /* Team */
+  #team-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 15px;
+    margin-left: 15%;
+  }
+  #team-section .card {
+    width: 100%;
+    max-width: 240px;
+    max-height: 330px;
+    padding: 0;
+  }
+  #team-section .card-title {
+    font-size: 12px;
+    margin: 8px 0 0 8px;
+  }
+  #team-section .card-body {
+    font-size: 12px;
+    margin: 8px 0 0 8px;
+  }
+  #team-section .card-image img {
+    width: 100%;
+    height: auto;
+  }
+  .TxtWrapper2 {
+    margin-top: 4%;
+  }
+  /* Reviews */
+  #Reviews {
+    margin-top: 105%;
+  }
+  #Reviews h1 {
+    font-size: 3.2em;
+  }
+  .ReviewsCards {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+  }
+  .review-card {
+    width: 100%;
+    width: 240px;
+    height: 240px;
+    padding: 18px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .review-card .img {
+    width: 220px;
+    height: 140px;
+    top: 95px;
+  }
+  .review-card:hover {
+    border-radius: 10px;
+    height: 320px;
+  }
+  .review-card .img:hover {
+    transform: translateY(-60px);
+  }
+  .caption h3 {
+    font-size: 14px;
+  }
+  .caption p {
+    font-size: 14px;
+    margin: 180px 0 8px 0;
+  }
+  /* FAQ */
+  #FAQ {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #FAQ h1 {
+    text-align: center;
+    font-size: 3.2em;
+  }
+  .faq-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 15px;
+  }
+  /* Prices */
+  .Pricing-carousel-container {
+    margin-top: -3%;
+  }
+  .Pricing-carousel-container h1 {
+    font-size: 3.8em;
+    display: flex;
+  }
+  .Pricing-carousel-container .PricingImg img {
+    width: 100%;
+    max-width: 430px;
+    margin-top: -25px;
+    height: auto;
+  }
+  .slider {
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 5%;
+  }
+  .Pricing-card {
+    width: 100%;
+    max-width: 13rem;
+    padding: 1rem;
+  }
+  .controls {
+    width: 70%;
+  }
+  .control-button {
+    transform: rotate(270deg);
+  }
+  /* Contact */
+  #Contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 0 0px;
+    gap: 360px;
+  }
+  .line {
+    width: 50vw;
+  }
+  .left,
+  .right {
+    width: 50vw;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .left .content {
+    width: 80vw;
+    text-align: center;
+  }
+  .right .content {
+    width: 70vw;
+    text-align: center;
+  }
+  .ContactTxtWrap .line .content span {
+    font-size: 1.8em;
+  }
+  .form-container {
+    width: 100%;
+    max-width: 480px;
+    margin-left: -55%;
+  }
+  .form-container .form {
+    padding-right: 20px;
+  }
+  /* Footer */
+  .footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -5%;
+  }
+  .footerLogo img {
+    max-width: 130%;
+    margin-top: 20px;
+    margin-left: 2%;
+  }
+  .footerLogo p {
+    margin-top: -10px;
+    font-size: 20px;
+  }
+  .footerCopyright {
+    font-size: 15px;
+  }
+  .footerAddress {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .Intro {
+    height: 100vh; /* Set the height of the intro section */
+  }
+  #Reviews {
+    margin-top: 35%;
+  }
+  #Contact {
+    gap: 0px;
+    margin-left: 5%;
+  }
+  .form-container {
+    max-width: 980px;
   }
 }/*# sourceMappingURL=style.css.map */
