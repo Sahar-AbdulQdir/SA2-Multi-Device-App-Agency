@@ -1,69 +1,48 @@
-/* Set the default cursor to be the custom one */
-body {
-    cursor: none; /* Hide the default cursor */
-  }
+/* This is the style for a custom rotating cursor with glowing and pulsing effects */
+.custom-cursor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #e98bd7c7; 
+  border-radius: 50%; 
+  pointer-events: none; 
+  transition: transform 0.2s ease, border 0.2s ease; 
+  animation: rotate 2s linear infinite, pulse 2s infinite; 
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; 
+}
 
+/* This is the keyframes for rotation animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* Start rotation */
+  }
+  100% {
+    transform: rotate(360deg); /* Complete a full rotation */
+  }
+}
 
-  /* Create the custom rotating cursor */
-  .custom-cursor {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #e98bd7c7; /* Pinkish border */
-    border-radius: 50%; /* Makes it a perfect circle */
-    pointer-events: none; /* Ensures it doesn't interfere with other elements */
-    transition: transform 0.2s ease, border 0.2s ease; /* Smooth movement and effects */
-    animation: rotate 2s linear infinite, pulse 2s infinite; /* Add rotation and pulsing animations */
-    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Glowing effect */
+/* This is the keyframes for pulsing animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1); 
   }
-  
-  /* Animation for rotation */
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg); /* Start at 0 degrees */
-    }
-    100% {
-      transform: rotate(360deg); /* Complete a full rotation */
-    }
+  50% {
+    transform: scale(1.2); /* Slightly bigger size */
   }
-  
-  /* Animation for pulsing effect */
-  @keyframes pulse {
-    0% {
-      transform: scale(1); /* Normal size */
-    }
-    50% {
-      transform: scale(1.2); /* Slightly bigger */
-    }
-    100% {
-      transform: scale(1); /* Back to normal */
-    }
+  100% {
+    transform: scale(1); 
   }
-  
-  
-  /* Animation for the pulsating effect */
-  @keyframes pulse {
-    0% {
-      transform: scale(1); /* Normal size */
-    }
-    50% {
-      transform: scale(1.2); /* Slightly bigger */
-    }
-    100% {
-      transform: scale(1); /* Back to normal */
-    }
+}
+
+/* This is the keyframes for glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
   }
-  
-  /* Animation for the glow effect */
-  @keyframes glow {
-    0% {
-      box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
-    }
-    50% {
-      box-shadow: 0 0 20px pink, 0 0 40px pink, 0 0 60px pink;
-    }
-    100% {
-      box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
-    }
+  50% {
+    box-shadow: 0 0 20px pink, 0 0 40px pink, 0 0 60px pink;
   }
-  
+  100% {
+    box-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;
+  }
+}

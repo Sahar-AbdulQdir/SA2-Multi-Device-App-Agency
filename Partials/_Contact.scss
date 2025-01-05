@@ -1,47 +1,54 @@
-
+/* Styles for the main Contact section, setting up layout and spacing */
 #Contact {
-    display: flex;
-    /* flex-direction: row; */
-    align-items: center;
-    /* justify-content: space-between; */
-    /* text-align: center; */
-    /* gap: 40px; */
-    margin-top: 230px;
+  display: flex;
+  align-items: center;
+  margin-top: 230px;
 }
 
-#Contact{
-    .ContactTxtWrap{
-    margin-left: -400px;
-    margin-top: 60px;
+/* Additional styles for the Contact text wrapper */
+#Contact .ContactTxtWrap {
+  margin-left: -400px;
+  margin-top: 60px;
 }
+
+/* Styling for the horizontal line in the Contact section */
 .line {
   width: 80vw;
 }
+
+/* General layout styles for left and right sections */
 .left, .right {
   width: 80vw;
   overflow: hidden;
   display: inline-block;
 }
+
+/* Specific styles for the left section */
 .left {
   color: rgb(124, 16, 126);
   transform: skew(0deg, -15deg);
 }
 
+/* Specific styles for the right section */
 .right {
   color: rgb(255, 255, 255);
-  transform: skew(0deg, 15deg) translate(40px, -90px); /* Moves 75px up and 50px to the right */
+  transform: skew(0deg, 15deg) translate(40px, -90px);
 }
 
-
+/* Centering content within the left section */
 .left .content {
   width: 90vw;
   text-align: center;
 }
+
+/* Centering content within the right section */
 .right .content {
   width: 90vw;
   text-align: center;
   transform: none;
 }
+
+/* Styling for text elements within Contact section */
 .ContactTxtWrap .line .content span {
   display: inline-block;
   font-family: "Agbalumo", serif;
@@ -49,14 +56,15 @@
   font-size: 3em;
   font-weight: 800;
   text-transform: uppercase;
-  line-height: .8;
-  transition: ease-out .6s;
+  line-height: 0.8;
+  transition: ease-out 0.6s;
 }
-}
+
+/* Styling for the form container, including gradients and layout */
 .form-container {
   width: 500px;
   background: linear-gradient(#000000, #000000) padding-box,
-              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+              linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
   border: 2px solid transparent;
   padding: 32px 24px;
   font-size: 14px;
@@ -67,25 +75,28 @@
   gap: 20px;
   box-sizing: border-box;
   border-radius: 16px;
-  /* margin-right: 100px; */
 }
 
+/* Scale effect for active state of buttons in the form */
 .form-container button:active {
   scale: 0.95;
 }
 
+/* Layout for the form inside the form container */
 .form-container .form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+/* Layout for individual form groups */
 .form-container .form-group {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
+/* Styling for form group labels */
 .form-container .form-group label {
   display: block;
   margin-bottom: 5px;
@@ -94,6 +105,7 @@
   font-size: 12px;
 }
 
+/* Styling for text inputs in the form group */
 .form-container .form-group input {
   width: 95%;
   padding: 12px 16px;
@@ -104,6 +116,7 @@
   border: 1px solid #ffffff;
 }
 
+/* Styling for textareas in the form group */
 .form-container .form-group textarea {
   width: 95%;
   padding: 12px 16px;
@@ -116,20 +129,24 @@
   font-family: inherit;
 }
 
+/* Placeholder styling for inputs */
 .form-container .form-group input::placeholder {
   opacity: 0.5;
 }
 
+/* Focus effect for text inputs */
 .form-container .form-group input:focus {
   outline: none;
   border-color: #e81cff;
 }
 
+/* Focus effect for textareas */
 .form-container .form-group textarea:focus {
   outline: none;
   border-color: #e81cff;
 }
 
+/* Styling for the submit button in the form */
 .form-container .form-submit-btn {
   display: flex;
   align-items: flex-start;
@@ -145,13 +162,11 @@
   font-size: inherit;
   gap: 8px;
   margin-top: 8px;
-  cursor: pointer;
   border-radius: 6px;
 }
 
+/* Hover effect for the submit button */
 .form-container .form-submit-btn:hover {
   background-color: #fff;
   border-color: #fff;
 }
-
-

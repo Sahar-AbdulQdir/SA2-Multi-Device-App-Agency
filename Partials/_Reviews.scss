@@ -1,86 +1,102 @@
-
-
-#Reviews{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-     margin-top: 200px; 
+/* This is the styling for the Reviews section */
+#Reviews {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding inside the section */
+    margin-top: 200px; /* Space from the top */
 }
 
-#Reviews h1{
-    font-size: 4.7em;
-    color: white;
+/* This is the styling for the Reviews section header */
+#Reviews h1 {
+    font-size: 4.7em; /* Large font size */
+    color: white; /* White text color */
 }
 
-#Reviews span{
-    color: #820ea2;
-}
-.ReviewsCards{
-    width: 100%;
-/* height: 200vh; */
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 5%;
+/* This is the styling for the span inside the Reviews header */
+#Reviews span {
+    color: #820ea2; /* Purple text color */
 }
 
-
-.review-card{
-position: relative;
-font-family: sans-serif;
-width: 220px;
-height: 220px;
-background: #000000;
-padding: 30px;
-border-radius: 50%;
-box-shadow: 0 0 22px rgba(180, 2, 147, 0.4);
-transition: .6s;
-margin: 0 25px;
-}
-.review-card:hover{
-border-radius: 10px;
-height: 260px;
-}
-.review-card .img{
-position: relative;
-width: 100%;
-height: 100%;
-transition: .6s;
-z-index: 99;
-}
-.review-card:hover .img{
-transform: translateY(-40px);
-}
-.img img{
-width: 100%;
-border-radius: 50%;
-box-shadow: 0 0 22px #3336;
-transition: .6s;
-}
-.review-card:hover img{
-border-radius: 10px;
-}
-.caption{
-text-align: center;
-transform: translateY(-80px);
-opacity: 0;
-transition: .6s;
-}
-.review-card:hover .caption{
-opacity: 1;
-}
-.caption h3{
-font-size: 21px;
-font-family: sans-serif;
-}
-.caption p{
-font-size: 15px;
-color: #ffffff;
-font-family: sans-serif;
-margin: -10px 0 9px 0;
+/* This is the container for the review cards */
+.ReviewsCards {
+    width: 100%; /* Full width */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center cards horizontally */
+    align-items: center; /* Center cards vertically */
+    margin-top: 5%; /* Space from the top */
 }
 
+/* This is the styling for each individual review card */
+.review-card {
+    position: relative; /* Position relative for child elements */
+    width: 220px; /* Set card width */
+    height: 220px; /* Set card height */
+    background: #000000; /* Black background */
+    padding: 30px; /* Padding inside the card */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 0 22px rgba(180, 2, 147, 0.4); /* Box shadow */
+    transition: .6s; /* Smooth transition */
+    margin: 0 25px; /* Space between cards */
+}
 
+/* This adds a hover effect for the review card */
+.review-card:hover {
+    border-radius: 10px; /* Rounded corners on hover */
+    height: 260px; /* Increase height on hover */
+}
+
+/* This is the styling for the image container inside each card */
+.review-card .img {
+    position: relative; /* Position relative for child elements */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    transition: .6s; /* Smooth transition */
+    z-index: 99; /* Layering */
+}
+
+/* This is the hover effect for the image inside the card */
+.review-card:hover .img {
+    transform: translateY(-40px); /* Move image up on hover */
+}
+
+/* This is the styling for the image inside the review card */
+.img img {
+    width: 100%; /* Full width */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 0 22px #3336; /* Box shadow */
+    transition: .6s; /* Smooth transition */
+}
+
+/* This is the hover effect for the image inside the review card */
+.review-card:hover img {
+    border-radius: 10px; /* Rounded corners on hover */
+}
+
+/* This is the caption styling inside the review card */
+.caption {
+    text-align: center; /* Center text */
+    transform: translateY(-80px); /* Move caption up */
+    opacity: 0; /* Initially hidden */
+    transition: .6s; /* Smooth transition */
+}
+
+/* This makes the caption visible on hover */
+.review-card:hover .caption {
+    opacity: 1; /* Show caption */
+}
+
+/* This is the styling for the caption's header inside the review card */
+.caption h3 {
+    font-size: 21px; /* Set font size */
+    color: #ffffff; /* White text color */
+}
+
+/* This is the styling for the caption's paragraph inside the review card */
+.caption p {
+    font-size: 15px; /* Set font size */
+    color: #ffffff; /* White text color */
+    margin: -10px 0 9px 0; /* Adjust margins */
+}

@@ -1,0 +1,44 @@
+/* This is the base style for the fade-in effect */
+.fade-in {
+    opacity: 0;
+    transition: opacity 3s ease-in-out; /* This is for a smooth fade-in transition */
+    transform: translateX(0%); /* This is the initial position */
+    animation: none; /* No animation by default */
+  }
+  
+  /* This is the style for visible elements with fade-in and wave effect */
+  .fade-in.visible {
+    opacity: 1; /* Makes the element fully visible */
+    animation: waveEffect 2s ease-in-out 0s 1 normal forwards; /* This is the wave animation */
+  }
+  
+  /* This is the keyframes for the wave effect animation */
+  @keyframes waveEffect {
+    0% {
+      transform: translateY(0%) rotate(0deg); /* Initial position */
+    }
+    15% {
+      transform: translateY(-10px) rotate(-5deg); /* Slight upward and left rotation */
+    }
+    30% {
+      transform: translateY(10px) rotate(5deg); /* Slight downward and right rotation */
+    }
+    45% {
+      transform: translateY(-8px) rotate(-4deg); /* Smaller upward movement */
+    }
+    60% {
+      transform: translateY(6px) rotate(3deg); /* Smaller downward movement */
+    }
+    75% {
+      transform: translateY(-4px) rotate(-2deg); /* Slight upward movement */
+    }
+    100% {
+      transform: translateY(0%) rotate(0deg); /* Back to the original position */
+    }
+  }
+  
+  /* Ensures the opacity remains 1 when visible */
+  .fade-in.visible {
+    opacity: 1;
+  }
+  

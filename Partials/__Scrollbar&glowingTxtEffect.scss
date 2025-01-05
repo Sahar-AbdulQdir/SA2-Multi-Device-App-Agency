@@ -1,0 +1,25 @@
+/* This is for making the scrollbar wider and setting a black background */
+::-webkit-scrollbar {
+  width: 20px;
+  background: #000;
+}
+
+/* This is for the scrollbar thumb and making it colorful and round */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#000, #56015b);
+  border-radius: 6px;
+  box-shadow: 0 0 10px #56015b, 0 0 20px #56015b;
+}
+
+/* This is for a glowing white text effect */
+.WhiteGlowEffect {
+    color: #ffffff; /* White text */
+    text-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff;
+    transition: TextShadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* This makes the glow brighter and text a little bigger when you hover */
+.WhiteGlowEffect:hover {
+    text-shadow: 0 0 16px #830e89, 0 0 32px #630f56; /* Intensifies the glow */
+    transform: scale(1.02); /* Slightly enlarges the text */
+}

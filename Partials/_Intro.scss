@@ -1,61 +1,73 @@
-    /* Intro section styles */
-    .Intro {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 20px;
-        /* margin-top: 150px; */
-
-        height: 80vh; /* Set the height of the intro section */
-    
-    }
-
-    .Intro video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 120%;
-        height: 100%;
-        object-fit: cover; /* Make the video cover the entire section without distortion */
-        z-index: -1; /* Place the video behind the text */
-    }
-
-
-    .Intro .partOne {
-        margin-top: -20px;
-    }
-    .Intro .partOne h1 {
-        font-size: 2.5em;
-        margin: 20px 0;
-        
-    }
-
-    .Intro .partOne p {
-        font-size: 1.2em;
-        margin-bottom: 50px;
-        max-width: 600px;
-    }
-
-    .Intro .partTwo {
-        display: flex;
-        gap: 85px;
-    }
-
-    .Intro button {
-        background: linear-gradient(45deg, #d769ee, #b45da8);
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 10px 20px;
-        font-size: 1em;
-        cursor: pointer;
-        transition: transform 0.3s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .Intro button:hover {
-        transform: scale(1.1);
-    }
+/* This is the Intro section styles */
+.Intro {
+    position: relative; /* Position the section for absolute positioning of child elements */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+    text-align: center; /* Align text to the center */
+    padding: 20px; /* Add spacing around the content */
+    height: 80vh; /* Set the height of the section */
+  }
+  
+  .Intro video {
+    position: absolute; /* Place video within the parent section */
+    top: 0;
+    left: 0;
+    width: 100%; /* Make video fill the width */
+    height: 100%; /* Make video fill the height */
+    object-fit: cover; /* Ensure video covers the section without distortion */
+    z-index: -1; /* Place the video behind other elements */
+  }
+  
+  .Intro .partOne {
+    margin-top: -20px; /* Adjust spacing above the content */
+  }
+  
+  .Intro .partOne h1 {
+    font-size: 2.5em; /* Adjust heading size */
+    margin: 20px 0; /* Add vertical spacing */
+  }
+  
+  .Intro .partOne p {
+    font-size: 1.2em; /* Adjust paragraph size */
+    margin-bottom: 50px; /* Add spacing below */
+    max-width: 600px; /* Limit the width of the paragraph */
+  }
+  
+  .Intro .partTwo {
+    display: flex; /* Align elements side by side */
+    gap: 85px; /* Add spacing between items */
+  }
+  
+  .Intro button {
+    background: linear-gradient(45deg, #d769ee, #b45da8); /* Gradient background */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1em; /* Adjust font size */
+    transition: transform 0.3s; /* Smooth scaling effect on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  }
+  
+  .Intro button:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+  }
+  
+  /* This is the main container styles */
+  .main {
+    position: relative; /* Enables child positioning */
+    margin: 20px auto; /* Center the container */
+    max-width: 1400px; /* Restrict the width */
+    border-radius: 20px; /* Rounded corners */
+    border: 2px solid #fbe6f4; /* Vibrant border color */
+    box-shadow: 0 0 5px #d01fd9b3, 0 0 3px #d01fd980; /* Glowy shadow effect */
+    background: rgb(0, 0, 0); /* Black background */
+    backdrop-filter: blur(5px); /* Apply a blur effect */
+    overflow: visible; /* Allow content to overflow */
+    font-family: "Agbalumo", serif; /* Custom font */
+    font-weight: 10; /* Adjust font weight */
+    font-style: normal; /* Regular text style */
+  }
+  

@@ -2,35 +2,34 @@
 
 // Media Query Mixins to handle the breakpoints
 @mixin respond-to($BreakPoints) {
-    @if $BreakPoints == mobile {
-      // Mobile devices: 360px to 720px
-      @media (min-width: 360px) and (max-width: 720px) {
-        @content;
-      }
-    } 
-    @else if $BreakPoints == tablet {
-      // Tablet devices: 720px to 1024px
-      @media (min-width: 720px) and (max-width: 1024px) {
-        @content;
-      }
-    } 
-    @else if $BreakPoints == small-desktop {
-      // Small desktops: 1024px to 1199px 
-      @media (min-width: 1024px) and (max-width: 1199px) {
-        @content;
-      }
-    } 
-    @else if $BreakPoints == big-desktop {
-      // Big desktops: 1200px to 1500px
-      @media (min-width: 1200px) and (max-width: 1500px) {
-        @content;
-      }
+  @if $BreakPoints == Mobile {
+    // Mobile devices: 360px to 720px
+    @media (min-width: 360px) and (max-width: 720px) {
+      @content;
     }
-    @else if $BreakPoints == ultra-big-desktop {
-      // Ultra big desktops: 1500px and up
-      @media (min-width: 1501px) {
-        @content;
-      }
+  } 
+  @else if $BreakPoints == Tablet {
+    // Tablet devices: 720px to 1024px
+    @media (min-width: 721px) and (max-width: 1024px) {
+      @content;
+    }
+  } 
+  @else if $BreakPoints == SmallDesktop {
+    // Small desktops: 1024px to 1199px 
+    @media (min-width: 1025px) and (max-width: 1199px) {
+      @content;
+    }
+  } 
+  @else if $BreakPoints == BigDesktop {
+    // Big desktops: 1200px to 1500px
+    @media (min-width: 1200px) and (max-width: 1500px) {
+      @content;
     }
   }
-  
+  @else if $BreakPoints == UltraBigDesktop {
+    // Ultra big desktops: 1500px and up
+    @media (min-width: 1501px) {
+      @content;
+    }
+  }
+}
