@@ -38,6 +38,10 @@ span .copymark {
 .logo h3 {
     margin: -10px 0 0 115px;
 }
+
+.navPart{
+    margin-left: -30%;
+}
 .navList ul {
     display: none;
 }
@@ -137,6 +141,10 @@ span .copymark {
     width: 100%;
     height: auto;
 }
+
+.card::before {
+    background: black;
+  }
 .TxtWrapper2 {
     margin-top: 5%;
 }
@@ -151,7 +159,7 @@ span .copymark {
 .ReviewsCards {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
+    margin-left: 4%;
     gap: 40px;
 }
 .review-card {
@@ -316,7 +324,7 @@ span .copymark {
   
       .main{
           max-width: 1024px;
-          left: 0%;
+          left: 1%;
       }
   
       .navPart {
@@ -346,10 +354,11 @@ span .copymark {
           display: flex;
           flex-direction: row;
           margin-top: -5%;
+          margin-left: 15%;
       }
 
       .navList li {
-        font-size: 1.3em;
+        font-size: .9em;
         position: relative;
     }
   
@@ -387,7 +396,10 @@ span .copymark {
       #Services {
           margin-top: -15%;
       }
-  
+      
+      .ServicesCards{
+        margin-left: -5%;
+      }
       #Carousel {
           margin-top: 10%;
       }
@@ -414,10 +426,11 @@ span .copymark {
           grid-template-rows: repeat(7, 1fr);
           grid-column-gap: 7px;
           grid-row-gap: 10px;
+          margin-left: 5%;
       }
       #Projects .ImageContainer img {
-          width: 90%;
-          max-height: 300px;
+          width: 75%;
+          max-height: 250px;
           border-radius: 25px;
           border: 2px solid #d980ba;
       }
@@ -519,6 +532,7 @@ span .copymark {
       /* Prices */
       .Pricing-carousel-container{
         margin-top: -4%;
+        margin-left: -5%;
       }
       .Pricing-carousel-container h1 {
           font-size: 4em;
@@ -633,10 +647,15 @@ span .copymark {
         }
     
         .main {
-            max-width: 90%;
-            left: 1%;
+            max-width: 95%;
+            left: 0%;
+            margin: 0;
         }
     
+        .button {
+            width: 140px; /* Sets the button width */
+        }
+
         .navPart {
             display: flex;
             align-items: center;
@@ -667,7 +686,7 @@ span .copymark {
         }
     
         .navList li {
-            font-size: 1em;
+            font-size: .9em;
             position: relative;
         }
 
@@ -884,7 +903,7 @@ span .copymark {
             align-items: center;
             justify-content: center;
             margin: 50px 0 0 0px;
-            gap: 360px;
+            gap: 600px;
         }
         .line {
             width: 50vw;
@@ -956,6 +975,11 @@ span .copymark {
     
   @include respond-to(BigDesktop){
     // Styles for big desktop devices
+    .main{
+        margin-left: 2%;
+        margin-top: 1%;
+    
+    }
     .Intro {
         height: 100vh; /* Set the height of the intro section */
     
@@ -975,5 +999,4 @@ span .copymark {
   }
 
   @include respond-to(UltraBigDesktop){
-
   }
