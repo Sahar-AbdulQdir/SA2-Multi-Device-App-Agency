@@ -1,140 +1,142 @@
-/* Styling for the Services section */
+/* From Uiverse.io by ercnersoy */ 
+
+/* Services section */
 #Services {
-  display: flex; /* Uses flexbox for layout */
-  flex-direction: column; /* Stacks content vertically */
-  align-items: center; /* Centers items horizontally */
-  justify-content: center; /* Centers items vertically */
-  text-align: center; /* Centers text */
-  padding: 20px; /* Adds padding inside the section */
-  margin-top: -4%; /* Moves the section up */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  margin-top: -4%;
 }
 
-/* Styling for the main heading in Services */
+/* Main heading in Services */
 #Services h1 {
-  font-size: 5.3em; /* Sets the font size */
-  color: white; /* Sets the text color */
+  font-size: 5.3em;
+  color: white;
 }
 
-/* Styling for the span inside the main heading */
 #Services h1 span {
-  color: #a315b9; /* Changes color of span */
+  color: #a315b9;
 }
 
-/* Styling for the ServicesCards container */
+/* Container for Service Cards */
 .ServicesCards {
-  display: flex; /* Uses flexbox for layout */
-  gap: 60px; /* Adds space between cards */
-  flex-wrap: wrap; /* Allows wrapping of cards */
-  justify-content: center; /* Centers the cards */
-  margin: 20px; /* Adds margin around cards */
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
 }
 
-/* Styling for each card */
+/* From Uiverse.io by ercnersoy */ 
+/* Individual card styling */
 .card {
-  position: relative; /* Allows for positioning adjustments */
-  width: 190px; /* Sets the width of the card */
-  height: 254px; /* Sets the height of the card */
-  background-color: #000; /* Sets the background color to black */
-  display: flex; /* Uses flexbox for layout */
-  flex-direction: column; /* Stacks content vertically */
-  justify-content: end; /* Aligns content at the bottom */
-  padding: 12px; /* Adds padding inside the card */
-  gap: 12px; /* Adds space between elements inside the card */
-  border-radius: 8px; /* Adds rounded corners */
-  color: white; /* Sets text color to white */
+  position: relative;
+  width: 190px;
+  height: 254px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  color: white;
 }
 
-/* Styling for the card's before pseudo-element */
+/* Before pseudo-element for the card */
 .card::before {
-  content: ''; /* Adds content */
-  position: absolute; /* Positions it absolutely */
-  inset: 0; /* Aligns it to the edges of the card */
-  left: -5px; /* Moves it slightly to the left */
-  margin: auto; /* Centers it */
-  width: 225px; /* Sets the width */
-  height: 285px; /* Sets the height */
-  border-radius: 10px; /* Rounds the corners */
-  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% ); /* Gradient background */
-  z-index: -10; /* Puts it behind other elements */
-  pointer-events: none; /* Disables interaction */
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth transition */
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 225px;
+  height: 285px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Styling for the card's after pseudo-element */
+/* After pseudo-element for the card */
 .card::after {
-  content: ""; /* Adds content */
-  z-index: -1; /* Puts it behind other elements */
-  position: absolute; /* Positions it absolutely */
-  inset: 0; /* Aligns it to the edges of the card */
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% ); /* Gradient background */
-  transform: translate3d(0, 0, 0) scale(0.95); /* Adjusts the size */
-  filter: blur(20px); /* Applies a blur effect */
+  content: '';
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
 }
 
-/* Styling for the card heading */
+/* Card heading */
 .heading {
-  font-size: 20px; /* Sets the font size */
-  text-transform: capitalize; /* Capitalizes the text */
-  font-weight: 700; /* Sets the font weight */
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
 }
 
-/* Styling for paragraphs in the card except the heading */
+/* Paragraph inside card except the heading */
 .card p:not(.heading) {
-  font-size: 14px; /* Sets the font size */
+  font-size: 14px;
 }
 
-/* Styling for the last paragraph in the card */
+/* Last paragraph in the card */
 .card p:last-child {
-  color: #ffffff; /* Sets the text color */
-  font-weight: 600; /* Sets the font weight */
+  color: #ffffff;
+  font-weight: 600;
 }
 
-/* Hover effects for the card */
+/* Hover effect for the card */
 .card:hover::after {
-  filter: blur(30px); /* Increases the blur on hover */
+  filter: blur(30px);
 }
 
-/* Hover effects for the card's before pseudo-element */
+/* Hover effect for the card's before pseudo-element */
 .card:hover::before {
-  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77); /* Rotates and scales the background */
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
 }
 
-/* Styling for the Carousel section */
+/* Carousel section */
 #Carousel {
-  margin-top: 120px; /* Adds space from the top */
+  margin-top: 120px;
 }
 
-/* Styling for the TxtWrapper */
+/* TxtWrapper styling */
 .TxtWrapper {
-  display: flex; /* Uses flexbox for layout */
-  justify-content: flex-start; /* Aligns content to the left */
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-  border-radius: 25px; /* Adds rounded corners */
-  border: 1px solid rgba(0, 0, 0, 0.3); /* Adds a subtle border */
-  overflow: hidden; /* Hides overflow content */
-  transform: rotate(7deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg); /* Applies multiple transformations */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Adds a shadow effect */
-  backdrop-filter: blur(10px); /* Creates a frosted glass effect */
+  display: flex;
+  justify-content: flex-start;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: rotate(7deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
 }
 
-/* Styling for the heading inside TxtWrapper */
+/* Heading inside TxtWrapper */
 .TxtWrapper h1 {
-  font-size: 3.3em; /* Sets the font size */
-  text-transform: uppercase; /* Makes the text uppercase */
-  color: white; /* Sets the text color */
-  white-space: nowrap; /* Prevents text from wrapping */
-  padding: 0 6rem; /* Adds padding */
-  letter-spacing: 1px; /* Adds space between letters */
-  animation: move-rtl 6000ms linear infinite; /* Animates the heading */
-  transform: rotate(180deg); /* Rotates the heading */
+  font-size: 3.3em;
+  text-transform: uppercase;
+  color: white;
+  white-space: nowrap;
+  padding: 0 6rem;
+  letter-spacing: 1px;
+  animation: move-rtl 6000ms linear infinite;
+  transform: rotate(180deg);
 }
 
 /* Keyframes for the move-rtl animation */
 @keyframes move-rtl {
-  0% { 
-      transform: translateX(0); /* Starts the animation */
+  0% {
+    transform: translateX(0);
   }
-  100% { 
-      transform: translateX(-100%); /* Moves the text to the left */
+  100% {
+    transform: translateX(-100%);
   }
 }
