@@ -1,177 +1,174 @@
-/* This is the main footer styling */
+/* Main footer styling */
 .footer {
-    background-color: #000000;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center; /* Centers text within the footer */
-    margin-top: 150px; /* Adds spacing from the content above */
-    border-top: 2px solid transparent;
-    background-image: linear-gradient(145deg, #fc76ef, #40c9ff); /* Adds a gradient effect */
-    background-clip: padding-box;
-    -webkit-background-clip: text;
-    box-shadow: 0 0 15px #ec68de, 0 0 30px #6dc2f7; /* Glowing effect */
-    border-bottom: solid 1px black; /* Bottom border for definition */
-  }
-  
-  /* This is the container for footer content */
+  background-color: #000000;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 150px;
+  border-top: 2px solid transparent;
+  background-image: linear-gradient(145deg, #fc76ef, #40c9ff);
+  background-clip: padding-box;
+  -webkit-background-clip: text;
+  box-shadow: 0 0 15px #ec68de, 0 0 30px #6dc2f7;
+  border-bottom: solid 1px black;
+}
+
+/* Footer content container */
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Footer columns */
+.footerColumn {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+/* Footer column titles */
+.footerColumn h3 {
+  color: #9b59b6;
+  margin-bottom: 15px;
+}
+
+/* Footer column links */
+.footerColumn a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footerColumn a:hover {
+  color: #9b59b6;
+}
+
+/* Footer logo */
+.footerLogo img {
+  max-width: 500px;
+  margin-top: -120px;
+  margin-left: -120px;
+}
+
+/* Footer logo text */
+.footerLogo p {
+  margin-top: -80px;
+  margin-left: -15px;
+  font-size: 14px;
+}
+
+/* Social media icons layout */
+.socialIcons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* Social media links */
+.socialIcons a {
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.socialIcons a:hover {
+  color: #9b59b6;
+}
+
+/* Footer address section */
+.footerAddress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footerAddress div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footerAddress div i {
+  margin-right: 10px;
+  color: #9b59b6;
+}
+
+/* Footer copyright */
+.footerCopyright {
+  margin-top: 20px;
+  border-top: 1px solid #000000;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
   .footerContainer {
-    display: flex;
-    flex-wrap: wrap; /* Allows wrapping of items */
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto; /* Centers the container */
-  }
-  
-  /* This is the styling for individual footer columns */
-  .footerColumn {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px; /* Adds spacing between columns */
-  }
-  
-  /* This is the title styling for footer columns */
-  .footerColumn h3 {
-    color: #9b59b6; /* Purple color for headings */
-    margin-bottom: 15px;
-  }
-  
-  /* This is the link styling within footer columns */
-  .footerColumn a {
-    display: block;
-    color: #fff;
-    text-decoration: none; /* Removes underline from links */
-    margin-bottom: 10px;
-    transition: color 0.3s; /* Smooth hover effect */
-  }
-  
-  .footerColumn a:hover {
-    color: #9b59b6; /* Purple color on hover */
-  }
-  
-  /* This is the styling for the footer logo */
-  .footerLogo img {
-    max-width: 500px;
-    margin-top: -120px;
-    margin-left: -120px;
-  }
-  
-  /* This is the text styling under the footer logo */
-  .footerLogo p {
-    margin-top: -80px;
-    margin-left: -15px;
-    font-size: 14px;
-  }
-  
-  /* This is the layout for social media icons */
-  .socialIcons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    grid-template-rows: repeat(2, 1fr); /* Two rows */
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-  
-  /* This is the styling for social media links */
-  .socialIcons a {
-    color: #fff;
-    font-size: 20px;
-    transition: color 0.3s;
-  }
-  
-  .socialIcons a:hover {
-    color: #9b59b6; /* Purple color on hover */
-  }
-  
-  /* This is the styling for the footer address section */
-  .footerAddress {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .footerAddress div {
-    display: flex;
     align-items: center;
-    margin-bottom: 10px;
   }
-  
-  .footerAddress div i {
-    margin-right: 10px;
-    color: #9b59b6; /* Purple icon color */
+
+  .footerColumn {
+    text-align: center;
   }
-  
-  /* This is the styling for the copyright section */
-  .footerCopyright {
-    margin-top: 20px;
-    border-top: 1px solid #000000;
-    padding-top: 20px;
-    font-size: 14px;
+
+  .footerAddress div {
+    justify-content: center;
   }
-  
-  /* This is the responsive styling for smaller screens */
-  @media (max-width: 768px) {
-    .footerContainer {
-      flex-direction: column;
-      align-items: center; /* Centers content on smaller screens */
-    }
-  
-    .footerColumn {
-      text-align: center; /* Centers text within columns */
-    }
-  
-    .footerAddress div {
-      justify-content: center; /* Centers address content */
-    }
+}
+
+/* Ocean wave effect */
+.ocean {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  background: #000000;
+}
+
+/* Wave layers */
+.wave2 {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 150px;
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-image: url(./Resources/Wave\ \(2\).png);
+}
+
+/* First wave layer */
+.wave2:nth-child(1) {
+  animation: waveMove 6s linear infinite;
+  opacity: 0.6;
+  z-index: 3;
+}
+
+/* Second wave layer */
+.wave2:nth-child(2) {
+  animation: waveMove 9s linear infinite;
+  opacity: 0.4;
+  z-index: 2;
+}
+
+/* Third wave layer */
+.wave2:nth-child(3) {
+  animation: waveMove 12s linear infinite;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+/* Keyframes for wave movement */
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
   }
-  
-  /* This is the styling for the ocean wave effect */
-  .ocean {
-    position: relative;
-    height: 150px;
-    width: 100%;
-    overflow: hidden; /* Ensures waves don't overflow the container */
-    background: #000000;
+  100% {
+    transform: translateX(-50%);
   }
-  
-  /* This is the styling for wave layers */
-  .wave2 {
-    position: absolute;
-    bottom: 0;
-    width: 200%; /* Extends wave width for smooth animation */
-    height: 150px;
-    background-repeat: repeat-x;
-    background-size: contain;
-    background-image: url(./Resources/Wave\ \(2\).png);
-  }
-  
-  /* This is the first wave layer with specific properties */
-  .wave2:nth-child(1) {
-    animation: waveMove 6s linear infinite; /* Fastest animation */
-    opacity: 0.6; /* Semi-transparent */
-    z-index: 3; /* Foreground wave */
-  }
-  
-  /* This is the second wave layer */
-  .wave2:nth-child(2) {
-    animation: waveMove 9s linear infinite; /* Medium-speed animation */
-    opacity: 0.4; /* More transparent */
-    z-index: 2;
-  }
-  
-  /* This is the third wave layer */
-  .wave2:nth-child(3) {
-    animation: waveMove 12s linear infinite; /* Slowest animation */
-    opacity: 0.2; /* Most transparent */
-    z-index: 1; /* Background wave */
-  }
-  
-  /* This is the keyframes for wave movement */
-  @keyframes waveMove {
-    0% {
-      transform: translateX(0); /* Start position */
-    }
-    100% {
-      transform: translateX(-50%); /* Moves wave to the left */
-    }
-  }
-  
+}
