@@ -1,142 +1,134 @@
 /* Header styles */
 #header {
-    background-color: #000; /* Sets the background color to black */
-    color: white; /* Sets the text color to white */
-    padding: 10px 40px; /* Adds padding inside the header */
-    border-radius: 25px; /* Rounded corners for the header */
-}
+    background-color: #000;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 25px;
+  }
+  
+  /* Navigation styling */
+  .navPart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo section styling */
+  .logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -60px;
+    top: -5px;
+    overflow: visible;
+  }
+  
+  .logo img {
+    height: 120px;
+    margin-right: 10px;
+  }
+  
+  .logo h3 {
+    width: 250px;
+    position: relative;
+    left: -40px;
+    font-size: 2em;
+  }
+  
+  /* Navigation list styling */
+  .navList ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+  }
+  
+  .navList li {
+    font-size: 1.7em;
+    position: relative;
+  }
+  
+  .navList a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .navList a:hover {
+    color: #a315b9;
+  }
+  
 
-/* Styles for the navigation part */
-.navPart {
-    display: flex; /* Uses flexbox for layout */
-    justify-content: space-between; /* Spaces out items */
-    align-items: center; /* Aligns items vertically in the center */
-}
-
-/* Styles for the logo section */
-.logo {
-    display: flex; /* Uses flexbox for layout */
-    align-items: center; /* Aligns items vertically */
-    position: relative; /* Allows for positioning adjustments */
-    left: -60px; /* Moves logo to the left */
-    top: -5px; /* Moves logo upwards */
-    overflow: visible; /* Makes sure overflow is visible */
-}
-
-/* Styles for the logo image */
-.logo img {
-    height: 120px; /* Sets the image height */
-    margin-right: 10px; /* Adds space to the right of the image */
-}
-
-/* Styles for the logo heading */
-.logo h3 {
-    width: 250px; /* Sets the width of the heading */
-    position: relative; /* Allows for positioning adjustments */
-    left: -40px; /* Moves the heading to the left */
-    font-size: 2em; /* Sets the font size */
-}
-
-/* Styles for the navigation list */
-.navList ul {
-    display: flex; /* Uses flexbox for layout */
-    list-style: none; /* Removes bullet points from the list */
-    margin: 0; /* Removes margin */
-    padding: 0; /* Removes padding */
-    gap: 20px; /* Adds space between items */
-}
-
-/* Styles for each navigation list item */
-.navList li {
-    font-size: 1.7em; /* Sets the font size */
-    position: relative; /* Allows for positioning adjustments */
-}
-
-/* Styles for the navigation links */
-.navList a {
-    text-decoration: none; /* Removes underline from links */
-    color: white; /* Sets the link color to white */
-    transition: color 0.3s; /* Smooth transition for color change */
-}
-
-/* Styles for the navigation link hover effect */
-.navList a:hover {
-    color: #a315b9; /* Changes link color on hover */
-}
-
-/* Styles for the button */
-.button {
-    width: 150px; /* Sets the button width */
-    padding: 10px 30px; /* Adds padding inside the button */
-    position: relative; /* Allows for positioning adjustments */
-    display: block; /* Makes button a block element */
-    text-decoration: none; /* Removes underline from button link */
-    overflow: hidden; /* Hides overflow content */
-    border: 0; /* Removes border */
-    border-radius: 2rem; /* Rounded corners for the button */
-    box-shadow: 0 0 5px 0px #b45da8; /* Adds a shadow effect */
-    top: 5px; /* Moves the button slightly down */
-}
-
-/* Styles for the button hover effect */
-.button:hover .wave {
-    top: -120px; /* Moves the wave element upwards on hover */
-}
-
-/* Styles for the button text */
-.text {
-    position: relative; /* Allows for positioning adjustments */
-    z-index: 1; /* Makes sure text is on top */
-    color: white; /* Sets the text color to white */
-    font-size: 15px; /* Sets the font size */
-    letter-spacing: 3px; /* Adds space between letters */
-    font-weight: 600; /* Sets the font weight */
-}
-
-/* Styles for the wave element inside the button */
-.wave {
-    width: 200px; /* Sets the width of the wave */
-    height: 200px; /* Sets the height of the wave */
-    background-color: #9a448f; /* Sets the background color */
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Adds an inner shadow */
-    position: absolute; /* Positions the wave absolutely */
-    left: 0; /* Aligns the wave to the left */
-    top: -70px; /* Positions the wave above the button */
-    transition: 0.4s; /* Smooth transition for wave effect */
-}
-
-/* Styles for the wave before and after pseudo-elements */
-.wave::before, a .wave::after {
-    width: 200%; /* Sets the width of the pseudo-elements */
-    height: 200%; /* Sets the height of the pseudo-elements */
-    content: ""; /* Adds content to the pseudo-elements */
-    position: absolute; /* Positions the pseudo-elements absolutely */
-    top: 0; /* Aligns them to the top */
-    left: 50%; /* Centers them horizontally */
-    transform: translate(-50%, -75%); /* Adjusts their position */
-}
-
-/* Styles for the wave before pseudo-element */
-.wave::before {
-    border-radius: 45%; /* Makes the wave rounded */
-    background-color: #832f78; /* Sets the background color */
-    animation: wave 5s linear infinite; /* Animates the wave */
-}
-
-/* Styles for the wave after pseudo-element */
-.wave::after {
-    border-radius: 40%; /* Makes the wave rounded */
-    background-color: #b45da8; /* Sets the background color */
-    animation: wave 10s linear infinite; /* Animates the wave */
-}
-
-/* Keyframes for the wave animation */
-@keyframes wave {
+  /* From Uiverse.io by Pravins01 */ 
+  /* Button styling */
+  .button {
+    width: 150px;
+    padding: 10px 30px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    border: 0;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 0px #b45da8;
+    top: 5px;
+  }
+  
+  .button:hover .wave {
+    top: -120px;
+  }
+  
+  .text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
+  
+  /* Wave effect inside button */
+  .wave {
+    width: 200px;
+    height: 200px;
+    background-color: #9a448f;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: -70px;
+    transition: 0.4s;
+  }
+  
+  .wave::before, a .wave::after {
+    width: 200%;
+    height: 200%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+  
+  .wave::before {
+    border-radius: 45%;
+    background-color: #832f78;
+    animation: wave 5s linear infinite;
+  }
+  
+  .wave::after {
+    border-radius: 40%;
+    background-color: #b45da8;
+    animation: wave 10s linear infinite;
+  }
+  
+  /* Wave animation */
+  @keyframes wave {
     0% {
-        transform: translate(-50%, -75%) rotate(0deg); /* Starts the rotation */
+      transform: translate(-50%, -75%) rotate(0deg);
     }
-
     100% {
-        transform: translate(-50%, -75%) rotate(300deg); /* Ends the rotation */
+      transform: translate(-50%, -75%) rotate(300deg);
     }
-}
+  }
+  
