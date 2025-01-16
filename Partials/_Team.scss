@@ -1,95 +1,96 @@
-/* Styling for the team section container */
+/* Team section container */
 #team-section {
-  display: grid; /* Uses grid layout */
-  grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
-  grid-template-rows: repeat(4, 1fr); /* Creates 4 equal rows */
-  grid-column-gap: 15px; /* Adds gap between columns */
-  grid-row-gap: 15px; /* Adds gap between rows */
-  margin-left: 5%; /* Moves the section from the left */
-  margin-top: 4%; /* Adds space from the top */
-  height: 80vh; /* Sets the height to 80% of the viewport */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin-left: 5%;
+  margin-top: 4%;
+  height: 80vh;
 }
 
-/* Styling for the second TxtWrapper */
+/* Second TxtWrapper styling */
 .TxtWrapper2 {
-  margin-top: 38%; /* Moves the element down */
-  width: 100%; /* Sets the width to 100% */
-  display: flex; /* Uses flexbox for layout */
-  justify-content: flex-start; /* Aligns content to the left */
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-  border-radius: 25px; /* Rounded corners */
-  border: 1px solid rgba(0, 0, 0, 0.3); /* Subtle border for definition */
-  overflow: hidden; /* Hides overflow content */
-  transform: rotate(7deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg); /* Applies multiple transformations */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Black blur shadow */
-  backdrop-filter: blur(10px); /* Creates a frosted glass effect */
+  margin-top: 38%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: rotate(7deg) translate(0px, 0px) scale(1, 0.7) skew(-9deg, -13deg);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
 }
 
-/* Styling for the heading inside TxtWrapper2 */
+/* Heading inside TxtWrapper2 */
 .TxtWrapper2 h1 {
-  font-size: 4em; /* Sets the font size */
-  text-transform: uppercase; /* Makes the text uppercase */
-  color: white; /* Sets the text color */
-  white-space: nowrap; /* Prevents text from wrapping */
-  padding: 0 6rem; /* Adds padding */
-  letter-spacing: 1px; /* Adds space between letters */
-  animation: moveRtl 6000ms linear infinite; /* Animates the heading */
-  transform: rotate(180deg); /* Rotates the heading */
+  font-size: 4em;
+  text-transform: uppercase;
+  color: white;
+  white-space: nowrap;
+  padding: 0 6rem;
+  letter-spacing: 1px;
+  animation: moveRtl 6000ms linear infinite;
+  transform: rotate(180deg);
 }
 
 /* Keyframes for the moveRtl animation */
 @keyframes moveRtl {
-  0% { 
-      transform: translateX(0); /* Starts the animation */
+  0% {
+    transform: translateX(0);
   }
-  100% { 
-      transform: translateX(-100%); /* Moves the text to the left */
+  100% {
+    transform: translateX(-100%);
   }
 }
 
-/* Styling for the team cards inside the section */
+/* Styling for the team cards */
 #team-section .card {
-  padding: 20px; /* Adds padding inside the card */
-  width: 210px; /* Sets the width of the card */
-  height: 310px; /* Sets the height of the card */
-  border-radius: 20px; /* Rounds the corners */
-  background: #000000; /* Sets the background color */
-  box-shadow: 5px 5px 8px #1b1b1b, /* Adds shadow to the bottom-right */
-              -5px -5px 8px #272727; /* Adds shadow to the top-left */
-  transition: 0.4s; /* Smooth transition on hover */
+  padding: 20px;
+  width: 210px;
+  height: 310px;
+  border-radius: 20px;
+  background: #000000;
+  box-shadow: 5px 5px 8px #1b1b1b,
+              -5px -5px 8px #272727;
+  transition: 0.4s;
 }
 
 /* Hover effects for the cards */
 #team-section .card:hover {
-  translate: 0 -10px; /* Moves the card up on hover */
+  translate: 0 -10px;
 }
 
-/* Styling for the card title */
+/* Card title styling */
 #team-section .card-title {
-  font-size: 18px; /* Sets the font size */
-  font-weight: 600; /* Sets the font weight */
-  color: #b2eccf; /* Sets the text color */
-  margin: 15px 0 0 10px; /* Adds margin around the title */
+  font-size: 18px;
+  font-weight: 600;
+  color: #b2eccf;
+  margin: 15px 0 0 10px;
 }
 
-/* Styling for the card image container */
+/* Card image container styling */
 #team-section .card-image {
-  min-height: 160px; /* Sets the minimum height */
-  background-color: #313131; /* Sets the background color */
-  border-radius: 15px; /* Rounds the corners */
-  background: #00000000; /* Sets transparent background */
+  min-height: 160px;
+  background-color: #313131;
+  border-radius: 15px;
+  background: #00000000;
 }
 
-/* Styling for the image inside the card */
+/* Image inside the card */
 #team-section .card-image img {
-  width: 100%; /* Makes the image fill the container */
-  margin-top: 1%; /* Adds space from the top */
-  border-radius: 25px; /* Rounds the corners of the image */
+  width: 100%;
+  margin-top: 1%;
+  border-radius: 25px;
 }
 
-/* Styling for the card body */
+/* Card body styling */
 #team-section .card-body {
-  margin: 13px 0 0 10px; /* Adds margin around the body */
-  color: rgb(184, 184, 184); /* Sets the text color */
-  font-size: 15px; /* Sets the font size */
+  margin: 13px 0 0 10px;
+  color: rgb(184, 184, 184);
+  font-size: 15px;
 }
+
