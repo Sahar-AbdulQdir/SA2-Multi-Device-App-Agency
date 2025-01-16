@@ -1,66 +1,66 @@
-/* This is for the About Us section layout */
+/* About Us section layout */
 #AboutUs {
-  display: flex; /* Flexbox for layout */
-  flex-direction: column; /* Items stacked vertically */
-  margin-top: 40px; /* Space at the top */
-  justify-content: space-between; /* Space between items */
-  align-items: center; /* Center items horizontally */
-  gap: 100px; /* Space between items */
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
 }
 
-/* This is for the text in About Us section */
+/* About Us text styling */
 #AboutUs .Abouttxt {
-  margin-left: 70px; /* Space on the left */
-  color: white; /* White text color */
-  font-size: 1.3em; /* Slightly larger font */
+  margin-left: 70px;
+  color: white;
+  font-size: 1.3em;
 }
 
-/* This is for the About Us heading */
+/* About Us heading styling */
 #AboutUs .Abouttxt h1 {
-  text-decoration-style: double; /* Double underline effect */
-  font-size: 2.7em; /* Big font size */
+  text-decoration-style: double;
+  font-size: 2.7em;
 }
 
-/* This is for the paragraph inside About Us */
+/* About Us paragraph styling */
 #AboutUs .Abouttxt p {
-  width: 1200px; /* Width of the paragraph */
-  font-size: 1em; /* Regular font size */
-  text-align: left; /* Align text to the left */
-  line-height: 1.5; /* Space between lines */
+  width: 1200px;
+  font-size: 1em;
+  text-align: left;
+  line-height: 1.5;
 }
 
-/* This is for the Spline element */
+/* Spline element styling */
 #AboutUs .Spline {
-  margin-top: 50px; /* Space at the top */
-  width: 900px; /* Width of the Spline */
+  margin-top: 50px;
+  width: 900px;
 }
 
-/* This is for the typewriter text effect */
+/* Typewriter effect */
 #typewriter {
-  border-right: solid 3px rgba(255, 0, 153, 0.75); /* Blinking cursor */
-  white-space: normal; /* Allow text wrapping */
-  overflow: hidden; /* Hide extra text */
-  font-family: 'Source Code Pro', monospace; /* Monospace font */
-  font-size: 2em; /* Bigger font size */
-  color: rgba(255, 255, 255, .70); /* Light white text */
-  margin: 0; /* No margin */
-  text-align: center; /* Center the text */
-  transition: text-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+  border-right: solid 3px rgba(255, 0, 153, 0.75);
+  white-space: normal;
+  overflow: hidden;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2em;
+  color: rgba(255, 255, 255, .70);
+  margin: 0;
+  text-align: center;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* This is for the cursor animations */
+/* Cursor animation */
 @keyframes animated-cursor {
-  from { border-right-color: rgba(242, 0, 255, 0.75); } /* Start color */
-  to { border-right-color: rgb(121, 8, 106); } /* End color */
+  from { border-right-color: rgba(242, 0, 255, 0.75); }
+  to { border-right-color: rgb(121, 8, 106); }
 }
 
-/* This makes the cursor blink */
+/* Cursor blinking */
 #typewriter {
-  animation: animated-cursor 600ms steps(29, end) infinite; /* Infinite blinking */
+  animation: animated-cursor 600ms steps(29, end) infinite;
 }
 
-/* This is for the word highlight on hover */
+/* Word hover highlight */
 span.word:hover {
-  text-shadow: 0 0 10px rgba(255, 0, 153, 0.75), 0 0 20px rgba(255, 0, 153, 0.75); /* Glow effect */
-  transform: scale(1.1); /* Slightly bigger word */
+  text-shadow: 0 0 10px rgba(255, 0, 153, 0.75), 0 0 20px rgba(255, 0, 153, 0.75);
+  transform: scale(1.1);
 }
