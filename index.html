@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loader start -->
     
   <div class="loader">
+    <!-- Top part of the loader  -->
     <div class="loader-clip loader-clip-top">
         <div class="marquee">
             <span>CreativePulse<span class="copymark">&#174;</span></span>
@@ -17,6 +19,7 @@
         </div>
     </div>
 
+        <!-- middle part of the loader  -->
     <div class="loader-clip loader-clip-center">
         <div class="marquee">
             <span>CreativePulse<span class="copymark">&#174;</span></span>
@@ -25,6 +28,7 @@
         </div>
     </div>
 
+        <!-- bottom part of the loader  -->
     <div class="loader-clip loader-clip-bottom">
         <div class="marquee">
             <span>CreativePulse<span class="copymark">&#174;</span></span>
@@ -32,15 +36,20 @@
             <span>CreativePulse<span class="copymark">&#174;</span></span>
         </div>
     </div>
+    <!-- Loader end -->
 </div>
+<!-- A container that holds all the element .main -->
     <section class="main">
+        <!-- Header section start -->
     <section id="header" class="fade-in">
         <div class="navPart">
+            <!-- Logo image -->
           <div class="logo">
             <a href="index.html">
                 <img src="./Resources/Logo.png" alt="CreativePulse Logo">
             </a>
             <h3>
+                <!-- Animated SVG for the logo text -->
                 <svg style="max-width: 400px; height: 50px; display: block;" viewBox="0 0 100 20">
                     <defs>
                         <!-- Define a gradient for the wave -->
@@ -69,13 +78,16 @@
         </div>
         
 
+        <!-- Navigation bar start -->
             <div class="navList">
                 <ul>
+                    <!-- Navigation links -->
                     <li><a href="#header">Home</a></li>
                     <li><a href="#AboutUs">About</a></li>
                     <li><a href="#Services">Services</a></li>
                     <li><a href="#Projects">Projects</a></li>
                     <li><a href="#Contact">Contact Us</a></li>
+                    <!-- Log in button -->
                     <li><a href="./Log-in.html"><button class="button">
                         <span class="text">Sign up</span>
                         <div class="wave"></div>
@@ -84,15 +96,20 @@
             </div>
         </div>
     </section>
+    <!-- Header section end -->
 
+    <!-- Intro section start -->
     <section class="Intro">
+        <!-- divs to generate the stars background -->
         <div class="stars"></div>
         <div class="stars2"></div>
         <div class="stars3"></div>
+        <!-- Video background -->
         <video autoplay muted loop>
             <source src="./Resources/HeaderBg.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <!-- Text content -->
         <div class="partOne">
             <button class="WhiteGlowEffect">Welcome to CreativePulse</button>
             <h1  class="WhiteGlowEffect">Your path to digital excellence</h1>
@@ -108,20 +125,27 @@
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
+    <!-- Intro section end -->
 
+    <!-- About us section start -->
     <section id="AboutUs" class="fade-in">
         <div class="Abouttxt">
             <h1 class="WhiteGlowEffect">About Us</h1>
             <p id="typewriter"></p>
         </div>
+
+
         
+        <!-- 3d element build with spline -->
         <div class="Spline">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.48/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/UbbgmIelv8GBMlKq/scene.splinecode"></spline-viewer>
     </div>
     </section>
+    <!-- About us section end -->
 
       <section id="Carousel" class="fade-in">
+        <!-- animated marquee -->
         <div class="TxtWrapper">
             <h1>✦ Web Development</h1>
             <h1>✦ Digital Marketing</h1>
@@ -135,9 +159,12 @@
         </div>
       </section>
 
+      <!-- Services section start -->
     <section id="Services" class="fade-in">
+        <!-- heading title -->
         <h1 class="WhiteGlowEffect">What We <span>Do</span>?</h1>
 
+        <!-- services cards -->
         <div class="ServicesCards">
         <div class="card">
           <p class="heading">Web Development</p>
@@ -157,15 +184,21 @@
           </div>
     </div>
       </section>
+      <!-- Services section end -->
 
 
 
+      <!-- Pricing section start -->
       <section id="Projects" class="fade-in">
         <h1 class="WhiteGlowEffect">Our <span>W</span>orks</h1>
+        <!-- 3d image gallery -->
         <div class="preview-img">
             <img src="./Resources/img13.png" alt="" />
         </div>
     
+
+        <!-- Image gallery -->
+         <!-- hidden in big screen sizes, appears in small screen sizes only -->
         <div class="container">
             <div class="gallery"></div>
         </div>
@@ -189,6 +222,9 @@
             
         </div>
       </section>
+      <!-- Pricing section end -->
+
+      <!-- animated marquee -->
         <div class="TxtWrapper2">
         <h1>✦ Meet the team</h1>
         <h1>✦ Meet the team</h1>
@@ -198,6 +234,8 @@
         <h1>✦ Meet the team</h1>
         <h1>✦ Meet the team</h1>
     </div>
+
+    <!-- Team section start -->
     <section id="team-section" class="fade-in">
         <!-- Team Member Cards -->
         <div class="card">
@@ -278,13 +316,17 @@
         
         </div>
     </section>
+    <!-- Team section end -->
 
+
+    <!-- Testimonials section start -->
       <section id="Reviews" class="fade-in">
 
         <div class="ReviewsTxt">
             <h1 class="WhiteGlowEffect">Real <span>E</span>xperiences, R<span>e</span>al Resu<span>l</span>ts</h1>
         </div>
 
+        <!-- reviews cards -->
         <div class="ReviewsCards">
             <div class="review-card">
                 <div class="img">
@@ -315,10 +357,14 @@
             </div>
         </div>
       </section>
+      <!-- Testimonials section end -->
+
+      <!-- FAQ section start -->
       <section id="FAQ" class="fade-in">
         <h1 class="WhiteGlowEffect"><span>F</span>requently As<span>k</span>ed Questi<span>o</span>ns</h1>
+
+        <!-- FAQ container -->
         <div class="faq-container">
-           
          <details class="faq-item">
              <summary class="faq-question">
                  Why choose CreativePulse for my digital needs?
@@ -383,8 +429,10 @@
          </details>
        </div>
        </section>
+       <!-- FAQ section end -->
        
 
+       <!-- pricing carousel section start-->
       <section  id="Pricing-carousel-container" class="Pricing-carousel-container fade-in">
 
         <h1 class="WhiteGlowEffect"><span>S</span>tart Your <span>P</span>lan Now<span>!</span></h1>
@@ -392,6 +440,7 @@
             <img class="PriceImage" src="./Resources/PricingImg.png" alt="">
         </div>
         <div class="Pricing-carousel">
+            <!-- pricing cards -->
             <div class="slider">
                 <div class="Pricing-card">
                     <span class="Pricing-title">Basic</span>
@@ -436,14 +485,17 @@
                     </span>
                 </div>
             </div>
+            <!-- buttons for the slider -->
             <div class="controls">
                 <button id="prev" class="control-button">❮</button>
                 <button id="next" class="control-button">❯</button>
             </div>
         </div>
     </section>
+    <!-- pricing carousel section end-->
 
 
+    <!-- Contact section start -->
       <section id="Contact" class="fade-in">
         <div class="ContactTxtWrap WhiteGlowEffect">
             <div class="line">
@@ -497,6 +549,7 @@
         </div>
         
 
+        <!-- form for caontacting purpose -->
         <div class="form-container">
             <form id="contact-form" class="form">
                 <div class="form-group">
@@ -516,9 +569,10 @@
         
 
     </section>
-    <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.48/build/spline-viewer.js"></script> -->
-<!-- <spline-viewer url="https://prod.spline.design/kjp9RqBuwMAtDNkk/scene.splinecode"></spline-viewer> -->
-<!-- <p style="margin-top: -100px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quibusdam reprehenderit, nam aperiam deleniti similique totam perferendis quo unde architecto perspiciatis reiciendis alias dicta quod illum in maiores non praesentium.</p> -->
+    <!-- Contact section end -->
+
+    <!-- Footer section start -->
+    <footer class="footer fade-in">
 <footer class="footer fade-in">
     <div class="footerContainer">
         <!-- Logo Section -->
