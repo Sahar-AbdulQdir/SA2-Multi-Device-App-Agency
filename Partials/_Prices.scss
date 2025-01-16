@@ -1,137 +1,133 @@
-/* This is the container for the pricing carousel */
+/* Pricing carousel container */
 .Pricing-carousel-container {
-    display: flex; /* Arrange items in a flexible layout */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: space-between; /* Space out the items evenly */
-    align-items: center; /* Center items horizontally */
-    margin-top: 5%; /* Space from the top */
-}
-
-/* This is the heading styling inside the pricing carousel container */
-.Pricing-carousel-container h1 {
-    font-size: 5em; /* Large font size */
-    color: white; /* White text color */
-}
-
-/* This is the span inside the pricing carousel heading */
-.Pricing-carousel-container h1 span {
-    color: #a315b9; /* Purple text color */
-}
-
-/* This is the styling for the pricing image */
-.Pricing-carousel-container .PricingImg img {
-    width: 550px; /* Set width */
-    margin-top: -80px; /* Adjust vertical position */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* This is the container for the pricing carousel */
-.Pricing-carousel {
-    display: flex; /* Align items in a flexible layout */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    height: 100%; /* Full height */
-    position: relative; /* Allows positioning of child elements */
-    width: 100%; /* Full width */
-}
-
-/* This is the slider container */
-.slider {
-    display: flex; /* Arrange items in a row */
-    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
-}
-
-/* This is the card inside the pricing carousel */
-.Pricing-card {
-    display: flex; /* Arrange content vertically */
-    flex-direction: column; /* Stack content */
-    align-items: center; /* Center content horizontally */
-    justify-content: space-between; /* Space out content */
-    width: 14rem; /* Set card width */
-    padding: 1rem; /* Padding inside the card */
-    background-color: rgb(122, 48, 143); /* Card background color */
-    background-image: radial-gradient( /* Multiple background gradients */
-        circle at 0% 0%, rgb(37, 7, 44) 15%, rgba(0, 0, 0, 0) 75%),
-        radial-gradient(circle at 100% 100%, rgb(25, 2, 31, 0.9) 15%, rgba(0, 0, 0, 0) 150%),
-        linear-gradient(135deg, rgba(24, 8, 28, 0) 0%, rgb(122, 48, 143) 50%, rgba(24, 8, 28, 0) 100%);
-    border-radius: 0.5rem; /* Rounded corners */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
-    opacity: 0.6; /* Initial opacity */
-}
-
-/* This is the active state of the pricing card */
-.Pricing-card.Pricing-active {
-    transform: scale(1.1); /* Slightly enlarge the active card */
-    opacity: 1; /* Set opacity to full */
-    z-index: 2; /* Bring to the front */
-}
-
-/* This is the title of the pricing card */
-.Pricing-card .Pricing-title {
-    font-size: 1.25rem; /* Set title size */
-    color: white; /* White text color */
-    font-weight: 600; /* Semi-bold font */
-}
-
-/* This is the pricing amount inside the card */
-.Pricing-card .pricing {
-    font-size: 1.5rem; /* Set font size */
-    color: white; /* White text color */
-    font-weight: 600; /* Semi-bold font */
-}
-
-/* This is the pricing time and sub-title */
-.Pricing-card .pricing-time,
-.Pricing-card .sub-title {
-    font-size: 0.75rem; /* Smaller text size */
-    color: rgb(184, 132, 199); /* Light purple color */
-    font-weight: 500; /* Medium font weight */
-}
-
-/* This is the list inside the pricing card */
-.Pricing-card .Pricing-list {
-    list-style: none; /* Remove list bullets */
-    padding: 0; /* Remove padding */
-    margin: 0.5rem 0; /* Vertical margin */
-    font-size: 0.875rem; /* Smaller font size */
-    color: white; /* White text color */
-    font-weight: 500; /* Medium font weight */
-}
-
-/* This is the button inside the pricing card */
-.Pricing-card .Pricing-button {
-    padding: 0.5rem 0.75rem; /* Button padding */
-    background-color: rgb(199, 95, 228); /* Button background color */
-    color: white; /* White text color */
-    border: none; /* Remove border */
-    border-radius: 0.5rem; /* Rounded corners */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow effect */
-}
-
-/* This is the hover effect on the button */
-.Pricing-card .Pricing-button:hover {
-    box-shadow: 0px 0px 20px 0 rgb(199, 95, 228); /* Add glow effect */
-}
-
-/* This is the controls container for the carousel */
-.controls {
-    position: absolute; /* Position absolutely relative to the carousel */
-    top: 50%; /* Vertical center */
-    width: 80%; /* Set width */
-    display: flex; /* Flex layout */
-    justify-content: space-between; /* Space out controls */
-    transform: translateY(-50%); /* Adjust for centering */
-}
-
-/* This is the button inside the controls */
-.control-button {
-    font-size: 2rem; /* Large font size */
-    color: white; /* White text color */
-    background: none; /* No background */
-    border: none; /* No border */
-}
-
-/* This is the hover effect for control buttons */
-.control-button:hover {
-    color: rgb(199, 95, 228); /* Change color on hover */
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+  }
+  
+  /* Heading inside pricing carousel */
+  .Pricing-carousel-container h1 {
+    font-size: 5em;
+    color: white;
+  }
+  
+  .Pricing-carousel-container h1 span {
+    color: #a315b9;
+  }
+  
+  /* Pricing image */
+  .Pricing-carousel-container .PricingImg img {
+    width: 550px;
+    margin-top: -80px;
+    height: auto;
+  }
+  
+  /* Pricing carousel */
+  .Pricing-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Slider container */
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Pricing card */
+  .Pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 14rem;
+    padding: 1rem;
+    background-color: rgb(122, 48, 143);
+    background-image: radial-gradient(circle at 0% 0%, rgb(37, 7, 44) 15%, rgba(0, 0, 0, 0) 75%),
+                      radial-gradient(circle at 100% 100%, rgb(25, 2, 31, 0.9) 15%, rgba(0, 0, 0, 0) 150%),
+                      linear-gradient(135deg, rgba(24, 8, 28, 0) 0%, rgb(122, 48, 143) 50%, rgba(24, 8, 28, 0) 100%);
+    border-radius: 0.5rem;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.6;
+  }
+  
+  .Pricing-card.Pricing-active {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  /* Pricing card title */
+  .Pricing-card .Pricing-title {
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 600;
+  }
+  
+  /* Pricing amount */
+  .Pricing-card .pricing {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+  }
+  
+  /* Pricing time & sub-title */
+  .Pricing-card .pricing-time,
+  .Pricing-card .sub-title {
+    font-size: 0.75rem;
+    color: rgb(184, 132, 199);
+    font-weight: 500;
+  }
+  
+  /* Pricing card list */
+  .Pricing-card .Pricing-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Button inside pricing card */
+  .Pricing-card .Pricing-button {
+    padding: 0.5rem 0.75rem;
+    background-color: rgb(199, 95, 228);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .Pricing-card .Pricing-button:hover {
+    box-shadow: 0px 0px 20px 0 rgb(199, 95, 228);
+  }
+  
+  /* Controls container */
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  /* Control button */
+  .control-button {
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+  }
+  
+  .control-button:hover {
+    color: rgb(199, 95, 228);
+  }
+  
