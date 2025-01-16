@@ -1,83 +1,81 @@
-/* This is the styling for the main projects section */
+/* Main projects section */
 #Projects {
-    display: flex; /* Flexbox layout */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center text */
-    padding: 20px; /* Padding inside the section */
-    margin-top: 70px; /* Space from the top */
-}
-
-/* This is the styling for the header inside the projects section */
-#Projects h1 {
-    font-size: 6em; /* Large font size */
-    color: white; /* White text color */
-}
-
-/* This is the styling for the span inside the projects header */
-#Projects h1 span {
-    color: #a315b9; /* Purple text color */
-}
-
-/* This is the container for the project gallery */
-#Projects .container {
-    position: relative; /* Relative positioning for child elements */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    perspective: 7000px; /* Set 3D perspective */
-}
-
-/* This is the gallery styling */
-#Projects .gallery {
-    position: relative; /* Position relative to the container */
-    width: 100%; /* Full width */
-    height: 400px; /* Adjusted gallery height */
-    margin: 0 auto; /* Center the gallery */
-    margin-top: -200px; /* Adjust the position */
-    transform-style: preserve-3d; /* Preserve 3D transformation */
-    transform: rotateX(55deg); /* 3D rotation effect */
-    border-radius: 55px; /* Rounded corners */
-}
-
-/* This is the individual item styling inside the gallery */
-#Projects .item {
-    position: absolute; /* Absolute position for stacking */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the item */
-    width: 50px; /* Set smaller width */
-    height: 50px; /* Set smaller height */
-    background: #b0b0b0; /* Gray background */
-    margin: 5px; /* Space between items */
-    transform-style: preserve-3d; /* Preserve 3D transformation */
-}
-
-/* This is the image inside the item */
-#Projects img {
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    object-fit: cover; /* Cover the area without distortion */
-}
-
-/* This is the preview image container with a glowing border */
-#Projects .preview-img {
-    position: fixed; /* Fixed position relative to the viewport */
-    top: 115%; /* Adjusted top position */
-    left: 52%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the preview */
-    width: 350px; /* Set preview width */
-    height: 250px; /* Set preview height */
-    overflow: hidden; /* Hide overflow */
-    z-index: 0; /* Layering */
-    border-radius: 25px; /* Rounded corners */
-
-    /* Glowing border effect */
-    border: 2px solid white; /* White solid border */
-    box-shadow: 0 0 10px white, 0 0 20px pink, 0 0 30px pink; /* Glowing pink effect */
-}
-
-/* This hides the image container initially */
-.ImageContainer {
-    display: none; /* Hide element */
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 70px;
+  }
+  
+  /* Header inside the projects section */
+  #Projects h1 {
+    font-size: 6em;
+    color: white;
+  }
+  
+  #Projects h1 span {
+    color: #a315b9;
+  }
+  
+  /* Project gallery container */
+  #Projects .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 7000px;
+  }
+  
+  /* Gallery styling */
+  #Projects .gallery {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: -200px;
+    transform-style: preserve-3d;
+    transform: rotateX(55deg);
+    border-radius: 55px;
+  }
+  
+  /* Individual item styling inside the gallery */
+  #Projects .item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: #b0b0b0;
+    margin: 5px;
+    transform-style: preserve-3d;
+  }
+  
+  /* Image inside the item */
+  #Projects img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Preview image container with glowing border */
+  #Projects .preview-img {
+    position: fixed;
+    top: 115%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 250px;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 25px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px white, 0 0 20px pink, 0 0 30px pink;
+  }
+  
+  /* Hide image container initially */
+  .ImageContainer {
+    display: none;
+  }
+  
